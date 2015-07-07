@@ -30,6 +30,8 @@ String.upcase("hellö") # HELLO
 # TODO Single-quoted and double-quoted representations are not equivalent in Elixir as they are represented by different types
 'hello' != "hello" # Single-quotes are char lists, double-quotes are strings. 
 
+ "foo" <> "bar" # "foobar" => string concatenation
+
 
 #########################################################################
 # ANONYMOUS FUNCTION
@@ -69,7 +71,42 @@ tl(list) # [2,3] not working ! I don't know why for the moment.. works in repl
 # hd [] # error, can't get head on empty list
 [104, 101, 108, 108, 111] # hello -> printable ascii numbers, elixir show them
 
+#########################################################################
+# TUPLES
+#########################################################################
+tuple = {:ok, "hello"} # like list, can contain any value
+put_elem(tuple, 1, "world") #{:ok, "world"} setter can add an element where you like
+# tuple not changed ! immutable data
+# a new tuple is sent
+elem(tuple,1) # getter
+tuple_size tuple # 2, size of the tuple
 
-# IO.puts
-# IO.puts
-# IO.puts
+ list = [1|[2|[3|[]]]] #[1, 2, 3]
+
+# list -> linked list via pointer in memory
+# list -> length slow : need to traverse the whole list
+# list -> prepending is fast, appending is slow
+
+# tuples -> element contiguously in memory
+# tuples -> accessing by index or get length is fast
+# tuples -> but slow for adding or modifying because need to rebuild all the tuple, immutability
+# often use in return result of function ex : File.read
+
+# CONVENTIONS
+# size if the operation is in constant time (i.e. the value is pre-calculated) : for tuples, bite_size in a string,
+# length if the operation requires explicit counting : for list, for strings length 
+
+#########################################################################
+# OPERATOR
+#########################################################################
+false or is_atom(:example) # and / or expect boolean value
+false and error("This error will never be raised") # fail fast on the left
+# and et or map to andalso in erling and orelse
+
+#||, && and !  # opeators, false and nil are falsy
+# or and operators accepts only boolean as first value
+1 == 1.0 #true
+1 === 1.0 #false === more strict with float value
+
+# comparing different types
+# number < atom < reference < functions < port < pid < tuple < maps < list < bitstring
