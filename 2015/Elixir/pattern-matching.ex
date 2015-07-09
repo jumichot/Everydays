@@ -17,4 +17,15 @@ list = [1, 2, 3]
 [0|list] # [0, 1, 2, 3] # pipe | can be used to prepend value to a list
 
 x = 3
-^x = 2
+^x = 2 # don't assign 2 to x, not rebinding
+
+x = 1
+{x, ^x} = {2, 1} # the first x is equal to 2, the ^x to 1
+x # 2
+
+[h | _] = [1, 2, 3] # the _ underscore for useless data
+
+_ # ERROR you can't read _
+
+length([1,[2],3]) = 3 # ** (CompileError) iex:1: illegal pattern
+# not function call with pattern matching
