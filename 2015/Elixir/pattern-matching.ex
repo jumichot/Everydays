@@ -15,3 +15,6 @@ b # "world"
 
 list = [1, 2, 3]
 [0|list] # [0, 1, 2, 3] # pipe | can be used to prepend value to a list
+
+x = 3
+^x = 2

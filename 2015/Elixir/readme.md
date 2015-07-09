@@ -6,3 +6,6 @@ Lean Basic Types : http://elixir-lang.org/getting-started/basic-types.html
 Differences between list and tuple
 Operators
 Pattern matching
+
+# 8/07
+The pin operator
