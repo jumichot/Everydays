@@ -68,7 +68,7 @@ length list #4
 list = [1,2,3]
 hd(list) # 1
 tl(list) # [2,3] not working ! I don't know why for the moment.. works in repl
-# hd [] # error, can't get head on empty list
+hd [] # ERROR, can't get head on empty list
 [104, 101, 108, 108, 111] # hello -> printable ascii numbers, elixir show them
 
 #########################################################################
@@ -99,9 +99,9 @@ tuple_size tuple # 2, size of the tuple
 #########################################################################
 # OPERATOR
 #########################################################################
-false or is_atom(:example) # and / or expect boolean value
+false or is_atom(:example) # and / or expect boolean value on the left side
 false and error("This error will never be raised") # fail fast on the left
-# and et or map to andalso in erling and orelse
+# and et or map to andalso in erlang and orelse
 
 #||, && and !  # opeators, false and nil are falsy
 # or and operators accepts only boolean as first value
