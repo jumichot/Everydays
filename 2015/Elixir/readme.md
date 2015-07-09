@@ -9,3 +9,7 @@ Pattern matching
 
 # 8/07
 The pin operator
+
+# 9/07
+The _ variable
+case, with guard conditions

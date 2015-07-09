@@ -1,2 +1,2 @@
 # Everydays
-2 consecutive day
+4 consecutive day
