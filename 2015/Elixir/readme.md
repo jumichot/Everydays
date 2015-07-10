@@ -13,3 +13,7 @@ The pin operator
 # 9/07
 The _ variable
 case, with guard conditions
+
+# 10/07
+cond, if/unless (macro), block do/end (keyworld list syntax)
+

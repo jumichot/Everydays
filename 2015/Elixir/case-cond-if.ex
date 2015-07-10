@@ -47,3 +47,48 @@ end
 
 f.(1, 3) # 4
 f.(-1, 3) # -3
+
+# cond is a sort of if else
+
+cond do
+  2 + 2 == 5 ->
+    "This will not be true"
+  2 * 2 == 3 ->
+    "Nor this"
+  1 + 1 == 2 ->
+    "But this will"
+end
+#"But this will"
+
+cond do
+  2 + 2 == 5 ->
+    "This is never true"
+  2 * 2 == 3 ->
+    "Nor this"
+  true ->
+    "This is always true (equivalent to else)"
+end
+# if none condition matche, raise an error
+# so it's good to add a default value
+
+lol = cond do
+  0 ->
+    "1 is considered as true"
+end
+# "1 is considered as true"
+# all value excepte false and nil are considered true
+
+###################################################
+# if and unless are defined via macro, not built-in
+
+###################################################
+# do end block can be written do:
+
+if true, do: (
+  a = 1 + 2
+  a + 10
+)
+# 13
+
+# you can pass else with keyword list syntax
+if false, do: :this, else: :that
