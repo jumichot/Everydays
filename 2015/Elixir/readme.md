@@ -17,3 +17,6 @@ case, with guard conditions
 # 10/07
 cond, if/unless (macro), block do/end (keyworld list syntax)
 
+# 11/07
+Binaries, strings and char lists
+

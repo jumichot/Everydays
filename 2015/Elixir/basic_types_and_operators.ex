@@ -27,7 +27,7 @@ String.upcase("hellö") # HELLO
 
 
 
-# TODO Single-quoted and double-quoted representations are not equivalent in Elixir as they are represented by different types
+# NOTE Single-quoted and double-quoted representations are not equivalent in Elixir as they are represented by different types
 'hello' != "hello" # Single-quotes are char lists, double-quotes are strings. 
 
  "foo" <> "bar" # "foobar" => string concatenation
