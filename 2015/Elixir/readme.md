@@ -21,6 +21,9 @@ cond, if/unless (macro), block do/end (keyworld list syntax)
 Binaries, strings and char lists
 keyword list, map, Dict
 
-# 12/07
-Modules, function capturing
+# 12/07 -> 14/07
+Modules, function capturing, recursion, map, enumerable, streams
+
+# 15/07
+streams
 
