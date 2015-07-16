@@ -34,3 +34,8 @@ Enum.take(stream, 10) # [1, 2, 3, 1, 2, 3, 1, 2, 3, 1]
 stream = Stream.unfold("hełło", &String.next_codepoint/1)
 Enum.take(stream, 3) # ["h", "e", "ł"]
 Enum.take(stream, 300) # ["h", "e", "ł", "ł", "o"]
+
+# NOTE good for opening large file, and be sure it will
+# be clause even if it fails
+stream = File.stream!("path/to/file") # #Function<18.16982430/2 in Stream.resource/3>
+Enum.take(stream, 10) # open 10 first lines

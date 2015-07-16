@@ -27,3 +27,6 @@ Modules, function capturing, recursion, map, enumerable, streams
 # 15/07
 streams
 
+# 16/07
+finish streams
+
