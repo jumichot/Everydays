@@ -31,3 +31,5 @@ streams
 finish streams
 processes : spawn, spawn_link, task.start, task.start_link
 
+# 17/07
+processes : state, example of key value store

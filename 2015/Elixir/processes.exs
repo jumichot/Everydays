@@ -51,3 +51,26 @@ spawn_link fn -> raise "oops" end
 Task.start fn -> raise "oops" end
 # {:ok, #PID<0.55.0>}
 
+#########################################################################
+# STATE
+#########################################################################
+defmodule KV do
+  def start_link do
+    Task.start_link(fn -> loop(%{}) end)
+  end
+
+  defp loop(map) do
+    receive do
+      {:get, key, caller} ->
+        send caller, Map.get(map, key)
+        loop(map)
+      {:put, key, value} ->
+        loop(Map.put(map, key, value))
+    end
+  end
+end
+
+{:ok, pid} = KV.start_link #PID<0.62.0>
+send pid, {:get, :hello, self()} # {:get, :hello, #PID<0.41.0>}
+flush #nil
+# it's because nothing in KV map store yet
