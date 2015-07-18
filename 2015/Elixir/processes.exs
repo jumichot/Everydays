@@ -74,3 +74,11 @@ end
 send pid, {:get, :hello, self()} # {:get, :hello, #PID<0.41.0>}
 flush #nil
 # it's because nothing in KV map store yet
+
+send pid, {:put, :hello, :world} #PID<0.62.0>
+send pid, {:get, :hello, self()} # {:get, :hello, #PID<0.41.0>}
+flush # :world
+
+Process.register(pid, :kv)# true
+send :kv, {:get, :hello, self()} # {:get, :hello, #PID<0.41.0>}
+flush # :world
