@@ -33,3 +33,9 @@ processes : spawn, spawn_link, task.start, task.start_link
 
 # 17/07
 processes : state, example of key value store
+
+# 18/07
+processes : state, Process.register
+
+# 19/07
+First Phoenix project
