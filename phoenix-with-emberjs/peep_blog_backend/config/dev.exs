@@ -29,7 +29,7 @@ config :logger, :console, format: "[$level] $message\n"
 # Configure your database
 config :peep_blog_backend, PeepBlogBackend.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "ju",
+  password: "mdp",
   database: "peep_blog_backend_dev",
   size: 10 # The amount of database connections in the pool
