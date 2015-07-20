@@ -2,6 +2,7 @@ defmodule PeepBlogBackend.Router do
   use PeepBlogBackend.Web, :router
 
   pipeline :api do
+    plug PlugCors, origins: ["*"]
     plug :accepts, ["json"]
   end
 
