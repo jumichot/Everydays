@@ -42,6 +42,12 @@ defmodule PeepBlogBackend.PostController do
     end
   end
 
+  def options(conn, _params) do
+    conn
+    |> put_status(200)
+    |> text(nil)
+  end
+
   def delete(conn, %{"id" => id}) do
     post = Repo.get!(Post, id)
 
