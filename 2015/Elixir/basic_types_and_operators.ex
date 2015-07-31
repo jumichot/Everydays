@@ -6,8 +6,16 @@ is_boolean(1) # false
 is_integer(3.2) # false
 :true == :belette # false
 true == :true # true boolean are atoms
+false == :false #true
+nil == :nil #true
+:"un atom" # : follow by any digit
+:"un_@atom" # : follow by any digit
+is_atom(:"un_@atom") # true
 is_atom(:true) # true
 is_atom(true) # true
+
+:foo == :foo #true
+:bar == "bar" #false
 
 #########################################################################
 # STRINGS
@@ -95,6 +103,15 @@ tuple_size tuple # 2, size of the tuple
 # CONVENTIONS
 # size if the operation is in constant time (i.e. the value is pre-calculated) : for tuples, bite_size in a string,
 # length if the operation requires explicit counting : for list, for strings length 
+#########################################################################
+# KEYWORD LIST
+#########################################################################
+# doesn't not exist in erlang
+# like ruby hash
+[toto: "toto", tata: "tata"]
+# internally same as array of tuples
+[{:toto, "toto"}, {:tata, "tata"}]
+[toto: "toto", tata: "tata"] == [{:toto, "toto"}, {:tata, "tata"}] #true
 
 #########################################################################
 # OPERATOR
