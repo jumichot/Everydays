@@ -112,3 +112,44 @@ defmodule Concat do
 end
 # concat.ex:7: this clause cannot match because a previous clause at line 2 always matches
 
+################
+# MIX MODULES
+###############
+# see mix_example folder
+
+# first way of compile it : pass the module as parameter of iex
+# iex lib/modules_example.ex
+# iex(1)> ModulesExample.publish("lol")
+# "lol"
+
+# second way with elixirc :
+# elixirc lib/modules_example.ex
+# generate a compiled file 2015/Elixir/mix_example/modules_example/Elixir.ModulesExample.beam
+# and again it's available in iex
+# iex(1)> ModulesExample.publish("lol")
+# "lol"
+
+# you can can define a module in the reple
+output = defmodule Foo do
+  def bar do
+    "lol"
+  end
+end
+
+# It's a tuple !
+# {:module, Foo,
+#  <<70, 79, 82, 49, 0, 0, 4, 140, 66, 69, 65, 77, 69, 120, 68, 99, 0, 0, 0, 92, 131, 104, 2, 100, 0, 14, 101, 108, 105, 120, 105, 114, 95, 100, 111, 99, 115, 95, 118, 49, 108, 0, 0, 0, 2, 104, 2, ...>>,
+#  {:bar, 0}}
+# Structure : an item ":module", the name of the constant, and the binary bytecode
+# You can send a module over the network to a node without give him access to the network
+# finaly contain a tuple defining the method availables in the module
+
+#########################
+# DOCUMENTATION
+#########################
+# add ex_doc as dependency { :ex_doc, github: "elixir-lang/ex_doc" }
+# mix deps.get
+# mix deps.get
+# mix docs
+
+
