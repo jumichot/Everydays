@@ -25,7 +25,29 @@ x # 2
 
 [h | _] = [1, 2, 3] # the _ underscore for useless data
 
-_ # ERROR you can't read _
+_ # NOTE ERROR you can't read _
 
 length([1,[2],3]) = 3 # ** (CompileError) iex:1: illegal pattern
 # not function call with pattern matching
+
+{_, baz} = {2,3} # baz == 3, but can't read _ because we don't care
+
+#########################################################################
+# PATTERN MATCHING FOR FUNCTION
+#########################################################################
+print_name = fn
+  :julien -> "Your name is Julien"
+  _       -> "I don't care what your name is"
+end
+
+print_name.("toto") # "I don't care what your name is"
+print_name.(:julien) # "Your name is Julien"
+
+#########################################################################
+# PATTERN MATCHING FOR CASE
+#########################################################################
+case {1,2,3} do
+  {1,3,3} -> "Didn't match"
+  {1,2,3} -> "Did match !"
+  {_,2,3} -> "Did match but never called"
+end
