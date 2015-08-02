@@ -1,0 +1,4 @@
+sidebarNodes = {
+
+};
+fillSidebarWithNodes(sidebarNodes);
