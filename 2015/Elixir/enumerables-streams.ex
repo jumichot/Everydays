@@ -79,16 +79,21 @@ Enum.find([-1,0,1], fn(x) -> x >= 0 end) # 0
 Enum.find([-1,0,1], fn(x) -> x > 2 end) # nil
 Enum.find([-1,0,1], :foo, fn(x) -> x > 2 end) # :foo : you can add default if not found, like fetch in ruby
 
-### first
-List.first([-1,0,1]) # -1, Enum.first deprecated, use Enum.at
-
 ### find_index
 Enum.find_index([1,2,3,4,5,6], fn(x) -> x > 3 end) # 3
 Enum.find_index([1,2,3,4,5,6], fn(x) -> x > 30 end) # nil
 
 ### find_value
 Enum.find_value([-1,0,1], fn(x) -> x >= 0 end) #  true
-iex(5)> Enum.find_value([-1,0,1], fn(x) -> x >= 10 end) # nil
+Enum.find_value([-1,0,1], fn(x) -> x >= 10 end) # nil
+
+### first
+List.first([-1,0,1]) # -1, Enum.first deprecated, use Enum.at
+
+# flat_map
+Enum.flat_map([1,2,3], fn(x) -> [x,x] end) # [1, 1, 2, 2, 3, 3]
+Enum.join([1,2,3], ",") # "1,2,3"
+Enum.join([1,2,3]) # "123"
 #########################################################################
 # STREAMS
 #########################################################################
