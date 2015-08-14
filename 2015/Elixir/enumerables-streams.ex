@@ -94,6 +94,30 @@ List.first([-1,0,1]) # -1, Enum.first deprecated, use Enum.at
 Enum.flat_map([1,2,3], fn(x) -> [x,x] end) # [1, 1, 2, 2, 3, 3]
 Enum.join([1,2,3], ",") # "1,2,3"
 Enum.join([1,2,3]) # "123"
+
+# map
+Enum.map([1,2,3], fn(x) -> x*2 end) # [2, 4, 6]
+
+# map_join
+Enum.map_join([1, 2, 3], " / ", fn(x) -> x*2 end) # "2 / 4 / 6"
+# map_join
+Enum.map_reduce([1, 2, 3], 0, fn(x,acc) -> {x+2, x+acc} end) # {[3, 4, 5], 6}
+# max
+Enum.max([]) # ** (Enum.EmptyError) empty error
+Enum.max([1,3,4]) # 4
+# max_by
+Enum.max_by([1,3,4], fn(x) -> 10-x end) # 1
+# min
+Enum.min([1,3,4]) # 1
+# min_by
+Enum.min_by([1,3,4], fn(x) -> 10-x end) # 4
+# member?
+Enum.member?([1,3,4], 3) # true
+Enum.member?(1..4, 3) # true
+Enum.member?([1,3,4], 6) # false
+# partition, separate true values, and the false values
+Enum.partition([1,2,3,4,5,6], fn(x) -> rem(x,2) == 0 end) # {[2, 4, 6], [1, 3, 5]}
+
 #########################################################################
 # STREAMS
 #########################################################################
