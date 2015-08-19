@@ -117,6 +117,44 @@ Enum.member?(1..4, 3) # true
 Enum.member?([1,3,4], 6) # false
 # partition, separate true values, and the false values
 Enum.partition([1,2,3,4,5,6], fn(x) -> rem(x,2) == 0 end) # {[2, 4, 6], [1, 3, 5]}
+# reduce
+Enum.reduce([1,2,3,4,5], fn(x, acc) -> x + acc end) # 15
+Enum.reduce([1,2,3,4,5], 10,  fn(x, acc) -> x + acc end) # 25
+# reject, return false value for fn
+Enum.reject([1,2,3,4,5], fn(x) -> rem(x, 2) == 0 end) #[1, 3, 5]
+# reverse
+Enum.reverse([1,2,3,4,5]) # [5, 4, 3, 2, 1]
+Enum.reverse(1..5) # [5, 4, 3, 2, 1]
+# shuffle
+Enum.shuffle(1..5) # [3, 2, 4, 1, 5]
+Enum.shuffle(1..5) # [2, 3, 1, 5, 4]
+# slice
+Enum.slice(1..7, 3, 2) #[4, 5]
+# sort, user the merge sort algorithm
+Enum.sort([2, 3, 1, 5, 4]) # [1, 2, 3, 4, 5]
+Enum.sort([2, 3, 1, 5, 4], fn(a,b) -> a>b end) # [5, 4, 3, 2, 1]
+# split
+Enum.split([2, 3, 1, 5, 4], 3) #{[2, 3, 1], [5, 4]}
+Enum.split([2, 3, 1, 5, 4], -3) # {[2, 3], [1, 5, 4]}
+# split_while
+Enum.split_while([1, 2, 1, 2, 3, 1, 2, 2], fn(x) -> x < 3 end) #{[1, 2, 1, 2], [3, 1, 2, 2]}
+# take 
+Enum.take(1..10, 5)# [1, 2, 3, 4, 5]
+# take_every, take one item every 4 item for example
+Enum.take_every(1..10, 3) #[1, 4, 7, 10]
+# take_while
+Enum.take_while([1, 2, 3, 1, 2, 3], fn(x)-> x<3 end) #[1, 2]
+# to_list
+Enum.to_list(1..3) #[1, 2, 3]
+# uniq
+Enum.uniq([1,3,2,23,4,3,3,2,3]) # [1, 3, 2, 23, 4]
+# with_index
+Enum.with_index(1..5) # [{1, 0}, {2, 1}, {3, 2}, {4, 3}, {5, 4}]
+
+# zip
+Enum.zip(1..3,3..7) # [{1, 3}, {2, 4}, {3, 5}]
+Enum.zip(1..3,3..10) # [{1, 3}, {2, 4}, {3, 5}]
+
 
 #########################################################################
 # STREAMS
