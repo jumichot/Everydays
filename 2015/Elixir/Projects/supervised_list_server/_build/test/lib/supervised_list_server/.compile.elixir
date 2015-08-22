@@ -1,0 +1,3 @@
+/Users/ju/CODE/Everydays/2015/Elixir/Projects/supervised_list_server/_build/test/lib/supervised_list_server/ebin/Elixir.SupervisedListServer.beam	Elixir.SupervisedListServer	lib/supervised_list_server.ex	Elixir
+/Users/ju/CODE/Everydays/2015/Elixir/Projects/supervised_list_server/_build/test/lib/supervised_list_server/ebin/Elixir.ListServer.beam	Elixir.ListServer	lib/list_server.ex	Elixir.GenServer	Elixir.Kernel	Elixir.List	Elixir.Module	erlang	Elixir
+_build/test/lib/supervised_list_server/ebin/Elixir.ListSupervisor.beam	Elixir.ListSupervisor	lib/list_supervisor.ex	Elixir.Kernel	Elixir.Module	Elixir.Supervisor	Elixir.Supervisor.Spec	Elixir

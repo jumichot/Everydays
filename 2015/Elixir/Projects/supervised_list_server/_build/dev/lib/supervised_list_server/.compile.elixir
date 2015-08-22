@@ -1,0 +1,2 @@
+_build/dev/lib/supervised_list_server/ebin/Elixir.SupervisedListServer.beam	Elixir.SupervisedListServer	lib/supervised_list_server.ex	Elixir
+_build/dev/lib/supervised_list_server/ebin/Elixir.ListServer.beam	Elixir.ListServer	lib/list_server.ex	Elixir.GenServer	Elixir.Kernel	Elixir.List	Elixir.Module	erlang	gen_server	Elixir
