@@ -87,3 +87,16 @@ keyword = []
 map = %{}
 Dict.put(keyword, :a, 1) # [a: 1]
 Dict.put(map, :a, 1) # %{a: 1}
+
+
+dict = [foo: 'bar', baz: 'beez', elixir: 'sips']
+Dict.delete(dict, :foo) # [baz: 'beez', elixir: 'sips']
+Dict.drop(dict, [:foo, :baz]) # [elixir: 'sips']
+# Dict.empty(dict) # don't work ?
+Dict.equal?(dict, dict) # true
+
+
+Dict.fetch(dict, :foo)  # {:ok, 'bar'}
+Dict.fetch(dict, :fos)  # :error
+Dict.fetch!(dict, :foo) # 'bar'
+Dict.fetch!(dict, :fozo) # ** (KeyError) key :fozo not found in: [foo: 'bar', baz: 'beez', elixir: 'sips']
