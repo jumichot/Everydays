@@ -1,0 +1,4 @@
+<div class="jumbotron">
+  <h2>Hello World, from <%= @messenger %>!</h2>
+  <h2>@messenger equivalent to  Dict.get(assigns, :messenger) :  <%= Dict.get(assigns, :messenger) %>!</h2>
+</div>
