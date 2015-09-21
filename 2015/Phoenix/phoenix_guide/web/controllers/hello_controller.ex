@@ -5,6 +5,10 @@ defmodule PhoenixGuide.HelloController do
     render conn, "index.html"
   end
 
+  def test_text(conn, _params) do
+    text conn, 'hello'
+  end
+
   # pattern matching against the params to set the messenger variable
   def show(conn, %{"messenger" => messenger}) do
     # pass the messenger variable to the template

@@ -17,6 +17,7 @@ defmodule PhoenixGuide.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/text_rendering", HelloController, :test_text
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
   end
