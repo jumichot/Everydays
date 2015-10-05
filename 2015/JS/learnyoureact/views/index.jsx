@@ -27,6 +27,8 @@ var TodoList = React.createClass({
   }
 });
 
+
+
 var Todo = React.createClass({
   propTypes: {
     title: React.PropTypes.string.isRequired
@@ -42,9 +44,9 @@ var Todo = React.createClass({
   render: function() {
     return (
       <tr>
-        <td style={{border: "1px solid black"}}><input type="checkbox" checked={this.state.checked} onChange={this.handleChange} /></td>
-        <td style={{border: "1px solid black"}}>{this.props.title}</td>
-        <td style={{border: "1px solid black"}}>{this.props.children}</td>
+        <td style={style.tableContent}><input type="checkbox" checked={this.state.checked} onChange={this.handleChange} /></td>
+        <td style={style.tableContent}>{this.props.title}</td>
+        <td style={style.tableContent}>{this.props.children}</td>
       </tr>
     );
   }
@@ -59,5 +61,11 @@ var TodoForm = React.createClass({
     );
   }
 });
+
+var style = {
+  tableContent: {
+    border: "1px solid black"
+  }
+};
 
 module.exports = TodoBox;
