@@ -19,7 +19,6 @@ defmodule Rumbl.Web do
   def model do
     quote do
       use Ecto.Model
-      
     end
   end
 
