@@ -5,6 +5,13 @@ defmodule Rumbl.SessionController do
     render conn, "new.html"
   end
 
+  def delete(conn,_) do
+    conn
+    |> Rumbl.Auth.logout()
+    |> put_flash(:info, "You have been logged out")
+    |> redirect(to: page_path(conn, :index))
+  end
+
   def create(conn, %{"session" => %{"username" => user, "password" => pass}}) do
     case Rumbl.Auth.login_by_username_and_pass(conn, user, pass, repo: Repo) do
       {:ok, conn} ->
