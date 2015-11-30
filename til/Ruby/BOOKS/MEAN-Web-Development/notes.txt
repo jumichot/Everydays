@@ -1,0 +1,39 @@
+- installation des près-requis lors des premiers chapitres
+- introduction à node et sa nature evenementielle
+- introduction au mvc
+- introduction à connect ça devient intéressant à partir de la page 60
+- introduction aux modules commonjs : deux types de module
+- p64: introduction aux middleware, ça fonctionne un peu comme rack visiblement
+- express organisation pas de conventions fortes visiblement...
+- p80: express routing et middlewares. On nous explique ce qu'il est possible de faire
+- p82: on refactore l'appli avec la bonne organisation de fichier et on split notre fichier en 3
+avec une gestion basée sur les modules
+- p86: ajout de quelques modules, on commence à parler des variables d'environnement
+- p92: ajoute middleware pour gérer les fichiers statiques, il est 'use' après la gestion des routes
+car ça demande de l'I/O, si c'était mis avant les perfs seraient mauvaise
+- p94 ajoute du middleware de session
+- p111 explique tout mongodb and crud operations
+- p114 introduction à mongoose, un ODM
+- p118 création du premier model mongoose
+- app.param('userId', users.userById) est un middleware prioritaire par rapport aux autres
+qui va ajouter la propriété user à l'objet req, on pourra donc utiliser req.user ailleur
+- p124 list et show des users, création de l'api
+- p128 moogoose modifier set permet de faire des modifs lors de l'enregistrement,
+get lors de la lecture, en utilisant l'option set sur le schema, on force mongoose à utiliser
+les getters lors de la conversion en json UserSchema.set('toJSON', { getters: true});
+- p131 attribut virtuels dans mongoose. Ils sont bien renvoyés dans le json. Possibilité de créer des
+setteur pour ces attributs.
+- p132 creation d'index, attention ça se fait au démarrage de l'app, faire gaffe en prod
+Attention avec les index d'unicité dans monogoose, si il y a déjà de la duplication ça ne fait rien !
+- p135: models validation
+- p137: models livecycle : mongoose middleware
+- p139: DBRef, relations entre les models. populate() ressemble à include, mongoose save un object id pour faire
+la jointure. Je suis sceptique sur les perfs, il faudrait regarder les requêtes faites à mongo dans ce cas. Cette
+feature permet d'émuler du relationnel dans du nosql, je suis pas convaincu que ce soit une super idée...
+- p142 auth avec passport
+- longue partie sur les strategies passport, stratégie local et oauth.
+- p190 angular
+- dans config/express il y a le setup du dossier public, c'est pourquoi dans les vues je peux juste require
+/application.js et qu'il va le chercher dans le dossier public
+- p202 ngRoute, configuration du router avec la config Hashbangs pour le seo, signigier que c'est une spa
+- p205 angular service : ce sont des singletons
