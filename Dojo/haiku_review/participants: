@@ -1,0 +1,16 @@
+participants: 
+ismaël
+till
+julien
+thomas
+maxime
+stéphane
+
+rétro
+- pour catcher des exceptions ne pas oublier d'utiliser des blocks en rspec avec expect{}
+- qwerty vs azerty
+- On a vu les exceptions en ruby
+- maxime a rien codé
+- till avait raison sur le .length
+- difficulté à baby step
+- ralentissement en voulant extraire en class plus tôt
