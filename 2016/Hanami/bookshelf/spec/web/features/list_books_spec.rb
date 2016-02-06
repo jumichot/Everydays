@@ -2,7 +2,7 @@ require 'features_helper'
 
 describe 'List books' do
   it 'display each books on the page' do
-    visit '/books/'
+    visit '/books'
 
     expect(page).to have_content('All books')
 
