@@ -138,11 +138,14 @@ var AddFishForm = React.createClass({
 
 
 var Header = React.createClass({
+  propTypes: {
+    tagline: React.PropTypes.string.isRequired
+  },
   render: function() {
     return (
       <header className="top">
         <h1>
-          Catch 
+          Catch
             <span className="ofThe">
               <span className="of">of</span>
               <span className="the">the</span>
@@ -156,6 +159,13 @@ var Header = React.createClass({
 });
 
 var Inventory = React.createClass({
+  propTypes: {
+    removeFish: React.PropTypes.func.isRequired,
+    addFish: React.PropTypes.func.isRequired,
+    loadSamples: React.PropTypes.func.isRequired,
+    fishes: React.PropTypes.object.isRequired,
+    linkState: React.PropTypes.func.isRequired
+  },
   renderInventory: function(key) {
     var linkState = this.props.linkState;
     return (
