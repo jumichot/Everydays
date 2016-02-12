@@ -15,6 +15,10 @@ var Rebase = require('re-base');
 var base = Rebase.createClass('https://sweltering-fire-9875.firebaseio.com/');
 var Catalyst = require('react-catalyst');
 
+// Imports components 
+import NotFound from './components/NotFound';
+import StorePicker from './components/StorePicker';
+
 var App = React.createClass({
   mixins: [Catalyst.LinkedStateMixin],
   getInitialState: function() {
@@ -245,33 +249,6 @@ var Order = React.createClass({
   }
 });
 
-
-var NotFound = React.createClass({
-  render: function() {
-    return (
-      <h1>Not Found !</h1>
-    );
-  }
-});
-
-var StorePicker = React.createClass({
-  mixins : [History],
-  goToStore: function(e){
-    e.preventDefault();
-    var storeId = this.refs.storeId.value;
-    this.history.pushState(null, '/store/' + storeId);
-  },
-  render: function() {
-    return (
-      <form className="store-selector" onSubmit={this.goToStore}>
-      {/* this is a comment */}
-        <h2>Please enter a store</h2>
-        <input type="text" ref="storeId" defaultValue={h.getFunName()} />
-        <input type="submit" />
-      </form>
-    )
-  }
-});
 
 var routes = (
   <Router history={createBrowserHistory()}>
