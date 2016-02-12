@@ -30,16 +30,18 @@ newEntry phrase points id =
     wasSpoken = False,
     id = id
   }
-entryItem phrase points =
+
+
+entryItem entry =
   li [ ]
-    [ span [ class "phrase" ] [ text phrase ],
-      span [ class "points" ] [ text (toString points) ]
+    [ span [ class "phrase" ] [ text entry.phrase ],
+      span [ class "points" ] [ text (toString entry.points) ]
     ]
 
 entryList =
   ul [ ]
-  [ entryItem "Future-Proof" 100,
-    entryItem "Doing Agile" 200 ]
+  [ entryItem (newEntry "Future-Proof" 100 1),
+    entryItem (newEntry "Doing Agile" 200 2) ]
 
 
 view =
