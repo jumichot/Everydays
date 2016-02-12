@@ -1,14 +1,14 @@
 module Bingo where
 
 import Html exposing(text)
-import String
+import String exposing(toUpper, repeat, trimRight)
 
 
 title message times =
   message ++ " "
-    |> String.toUpper
-    |> String.repeat times
-    |> String.trimRight
+    |> toUpper
+    |> repeat times
+    |> trimRight
     |> text
 
 main =
