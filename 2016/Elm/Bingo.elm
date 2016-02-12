@@ -3,11 +3,15 @@ module Bingo where
 import Html exposing(text)
 import String
 
-main =
-  -- text(String.repeat 3 (String.toUpper("Bingo ")))
-  "Bingo "
+
+title message times =
+  message ++ " "
     |> String.toUpper
-    |> String.repeat 3
+    |> String.repeat times
+    |> String.trimRight
     |> text
+
+main =
+  title "Bingo" 3
 
 
