@@ -18,11 +18,25 @@ newEntry phrase points id =
 initialModel =
   { entries =
     [ newEntry "Future-Proof" 100 1
-    , newEntry "Doing Agile" 200 2
     , newEntry "In the cloud" 300 3
+    , newEntry "Doing Agile" 200 2
     , newEntry "Rock-Star Ninja" 400 4
     ]
   }
+
+-- UPDATE
+-- describe possible action possible on a model
+-- it's just data
+type Action
+  = NoOp
+  | Sort
+
+update action model =
+  case action of
+    NoOp ->
+      model
+    Sort ->
+      { model | entries = List.sortBy .points model.entries }
 
 -- VIEW
 
@@ -65,6 +79,6 @@ view model =
 -- WIRED IT ALL TOGETHER
 
 main =
-  view initialModel
+  view (update Sort initialModel)
 
 
