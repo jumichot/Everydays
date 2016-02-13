@@ -5,6 +5,26 @@ import Html.Attributes exposing(..)
 import Html.Events exposing(..)
 import String exposing(toUpper, repeat, trimRight)
 
+-- MODEL
+
+newEntry phrase points id =
+  {
+    phrase = phrase,
+    points = points,
+    wasSpoken = False,
+    id = id
+  }
+
+initialModel =
+  { entries =
+    [ newEntry "Future-Proof" 100 1
+    , newEntry "Doing Agile" 200 2
+    , newEntry "In the cloud" 300 3
+    , newEntry "Rock-Star Ninja" 400 4
+    ]
+  }
+
+-- VIEW
 
 title message times =
   message ++ " "
@@ -23,13 +43,6 @@ pageFooter =
     [ a [ href "http://julienmichot.fr" ]
         [ text "Julien Michot website" ] ]
 
-newEntry phrase points id =
-  {
-    phrase = phrase,
-    points = points,
-    wasSpoken = False,
-    id = id
-  }
 
 
 entryItem entry =
@@ -38,21 +51,20 @@ entryItem entry =
       span [ class "points" ] [ text (toString entry.points) ]
     ]
 
-entryList =
-  ul [ ]
-  [ entryItem (newEntry "Future-Proof" 100 1),
-    entryItem (newEntry "Doing Agile" 200 2) ]
+entryList entries =
+  ul [ ] (List.map entryItem entries)
 
 
-view =
+view model =
   div [ id "container" ]
     [ pageHeader
-    , entryList
+    , entryList model.entries
     , pageFooter
     ]
 
+-- WIRED IT ALL TOGETHER
 
 main =
-  view
+  view initialModel
 
 
