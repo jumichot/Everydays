@@ -8,6 +8,8 @@ import String exposing(toUpper, repeat, trimRight)
 
 import StartApp.Simple as StartApp
 
+import Debug
+
 -- MODEL
 
 newEntry phrase points id =
@@ -34,6 +36,7 @@ type Action
   = NoOp
   | Sort
   | Delete Int
+  | Mark Int
 
 update action model =
   case action of
@@ -43,9 +46,18 @@ update action model =
       { model | entries = List.sortBy .points model.entries }
     Delete id ->
       let remainingEntries =
-        List.filter (\e -> e.id /= id) model.entries
+        Debug.log "RemainingEntries" (List.filter (\e -> e.id /= id) model.entries)
       in
         { model | entries = remainingEntries }
+    Mark id ->
+      let
+        entryToggleSpoken e =
+          { e | wasSpoken = (not e.wasSpoken) }
+        updateEntry e =
+          if e.id == id then entryToggleSpoken e else e
+      in
+        { model | entries = List.map updateEntry model.entries }
+
 
 
 
@@ -71,17 +83,34 @@ pageFooter =
 
 
 entryItem address entry =
-  li [ ]
+  li 
+    [ classList [ ("highlight", entry.wasSpoken) ]
+    , onClick address (Mark entry.id)
+    ]
     [ span [ class "phrase" ] [ text entry.phrase ]
     , span [ class "points" ] [ text (toString entry.points) ]
     , button [ class "delete", onClick address (Delete entry.id) ] [ ]
     ]
 
+totalPoint entries =
+  let
+    spokenEntries = List.filter .wasSpoken entries
+  in
+    List.sum (List.map .points spokenEntries)
+
+totalItem total =
+  li
+    [ class "total" ]
+    [ span [ class "label" ] [ text "Total" ]
+    , span [ class "points" ] [ text (toString total) ]
+    ]
+
 entryList address entries =
   let
     entryItems = List.map (entryItem address) entries
+    items = entryItems ++ [totalItem (totalPoint entries)]
   in
-    ul [ ] entryItems
+    ul [ ] items
 
 
 view address model =
