@@ -94,9 +94,8 @@ entryItem address entry =
 
 totalPoint entries =
   entries
-  |> List.filter .wasSpoken
-  |> List.map .points
-  |> List.sum
+    |> List.filter .wasSpoken
+    |> List.foldl (\e sum -> sum + e.points) 0
 
 totalItem total =
   li
