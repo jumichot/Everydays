@@ -11,7 +11,15 @@ import StartApp.Simple as StartApp
 import Debug
 
 -- MODEL
+type alias Entry =
+  { phrase: String
+  , points: Int
+  , wasSpoken: Bool
+  , id: Int
+  }
 
+
+newEntry : String -> Int -> Int -> Entry
 newEntry phrase points id =
   {
     phrase = phrase,
@@ -19,7 +27,10 @@ newEntry phrase points id =
     wasSpoken = False,
     id = id
   }
+type alias Model =
+  { entries : List Entry }
 
+initialModel : Model
 initialModel =
   { entries =
     [ newEntry "Future-Proof" 100 1
@@ -38,6 +49,7 @@ type Action
   | Delete Int
   | Mark Int
 
+update : Action -> Model -> Model
 update action model =
   case action of
     NoOp ->
@@ -62,7 +74,7 @@ update action model =
 
 
 -- VIEW
-
+title : String -> Int-> Html
 title message times =
   message ++ " "
     |> toUpper
@@ -71,10 +83,12 @@ title message times =
     |> text
 
 
+pageHeader : Html
 pageHeader =
   h1 [ ] [ title "Bingo !" 3 ]
 
 
+pageFooter : Html
 pageFooter =
   footer [ ]
     [ a [ href "http://julienmichot.fr" ]
@@ -82,8 +96,9 @@ pageFooter =
 
 
 
+entryItem : Signal.Address Action -> Entry -> Html
 entryItem address entry =
-  li 
+  li
     [ classList [ ("highlight", entry.wasSpoken) ]
     , onClick address (Mark entry.id)
     ]
@@ -92,11 +107,14 @@ entryItem address entry =
     , button [ class "delete", onClick address (Delete entry.id) ] [ ]
     ]
 
+totalPoint : List Entry -> Int
 totalPoint entries =
   entries
     |> List.filter .wasSpoken
     |> List.foldl (\e sum -> sum + e.points) 0
 
+
+totalItem : Int -> Html
 totalItem total =
   li
     [ class "total" ]
@@ -104,6 +122,7 @@ totalItem total =
     , span [ class "points" ] [ text (toString total) ]
     ]
 
+entryList : Signal.Address Action -> List Entry -> Html
 entryList address entries =
   let
     entryItems = List.map (entryItem address) entries
@@ -112,6 +131,7 @@ entryList address entries =
     ul [ ] items
 
 
+view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container" ]
     [ pageHeader
