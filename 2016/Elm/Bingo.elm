@@ -7,6 +7,7 @@ import Html.Events exposing(..)
 import String exposing(toUpper, repeat, trimRight)
 import Signal exposing(Address)
 import StartApp.Simple as StartApp
+import BingoUtils as Utils
 
 import Debug
 
@@ -24,7 +25,11 @@ newEntry phrase points id =
   Entry phrase points False id
 
 type alias Model =
-  { entries : List Entry }
+  { entries : List Entry
+  , phraseInput: String
+  , pointsInput: String
+  , nextId : Int
+  }
 
 initialModel : Model
 initialModel =
@@ -34,6 +39,9 @@ initialModel =
     , newEntry "Doing Agile" 200 2
     , newEntry "Rock-Star Ninja" 400 4
     ]
+  , phraseInput = ""
+  , pointsInput = ""
+  , nextId = 5
   }
 
 -- UPDATE
@@ -44,6 +52,9 @@ type Action
   | Sort
   | Delete Int
   | Mark Int
+  | UpdatePhraseInput String
+  | UpdatePointsInput String
+
 
 update : Action -> Model -> Model
 update action model =
@@ -65,6 +76,10 @@ update action model =
           if e.id == id then entryToggleSpoken e else e
       in
         { model | entries = List.map updateEntry model.entries }
+    UpdatePhraseInput contents ->
+      { model | phraseInput = contents }
+    UpdatePointsInput contents ->
+      { model | pointsInput = contents }
 
 
 
@@ -126,11 +141,37 @@ entryList address entries =
   in
     ul [ ] items
 
+entryForm : Address Action -> Model -> Html
+entryForm address model =
+  div [ ]
+  [ input
+      [ type' "text"
+      , placeholder "Phrase"
+      , value model.phraseInput
+      , name "phrase"
+      , autofocus True
+      , Utils.onInput address UpdatePhraseInput
+      ]
+      [ ]
+  , input
+      [ type' "number"
+      , placeholder "Points"
+      , value model.pointsInput
+      , name "points"
+      , Utils.onInput address UpdatePointsInput
+      ]
+      [ ]
+  , button [ class "add" ] [ text "Add" ]
+  , h2
+      [ ]
+      [ text (model.phraseInput ++ " " ++ model.pointsInput) ]
+  ]
 
 view : Address Action -> Model -> Html
 view address model =
   div [ id "container" ]
     [ pageHeader
+    , entryForm address model
     , entryList address model.entries
     , button [ class "sort", onClick address Sort ] [ text "Sort" ]
     , pageFooter
