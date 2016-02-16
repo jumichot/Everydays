@@ -5,7 +5,7 @@ import Html.Attributes exposing(..)
 import Html.Events exposing(..)
 
 import String exposing(toUpper, repeat, trimRight)
-
+import Signal exposing(Address)
 import StartApp.Simple as StartApp
 
 import Debug
@@ -21,12 +21,8 @@ type alias Entry =
 
 newEntry : String -> Int -> Int -> Entry
 newEntry phrase points id =
-  {
-    phrase = phrase,
-    points = points,
-    wasSpoken = False,
-    id = id
-  }
+  Entry phrase points False id
+
 type alias Model =
   { entries : List Entry }
 
@@ -96,7 +92,7 @@ pageFooter =
 
 
 
-entryItem : Signal.Address Action -> Entry -> Html
+entryItem : Address Action -> Entry -> Html
 entryItem address entry =
   li
     [ classList [ ("highlight", entry.wasSpoken) ]
@@ -122,7 +118,7 @@ totalItem total =
     , span [ class "points" ] [ text (toString total) ]
     ]
 
-entryList : Signal.Address Action -> List Entry -> Html
+entryList : Address Action -> List Entry -> Html
 entryList address entries =
   let
     entryItems = List.map (entryItem address) entries
@@ -131,7 +127,7 @@ entryList address entries =
     ul [ ] items
 
 
-view : Signal.Address Action -> Model -> Html
+view : Address Action -> Model -> Html
 view address model =
   div [ id "container" ]
     [ pageHeader
@@ -142,6 +138,7 @@ view address model =
 
 -- WIRED IT ALL TOGETHER
 
+main: Signal Html
 main =
   StartApp.start { model = initialModel, view = view, update = update }
 
