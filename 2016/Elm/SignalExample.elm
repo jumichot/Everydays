@@ -4,7 +4,10 @@ import Window
 import Keyboard
 import Time
 
+area : (Int, Int) -> Int
+area (w,h) =
+  w*h
+
+main : Signal Element
 main =
-  -- Signal.map show Mouse.x
-  -- Signal.map show Mouse.position
-  Signal.map show Window.dimensions
+  Signal.map show (Signal.map area Window.dimensions)
