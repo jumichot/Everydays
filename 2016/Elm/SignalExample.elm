@@ -18,6 +18,7 @@ import Char
 -- main =
 --   Signal.map show windowArea
 
+-- ================================================
 -- characters : Signal Char
 -- characters =
 --   Signal.map Char.fromCode Keyboard.presses
@@ -29,3 +30,28 @@ import Char
 -- main : Signal Element
 -- main =
 --   Signal.map show pressedDigit
+
+-- ================================================
+-- view : Int -> Int -> Element
+-- view w x =
+--   let
+--     side =
+--       if x < w // 2 then "Left" else "Right"
+--   in
+--     show side
+
+-- main : Signal Element
+-- main =
+--   Signal.map2 view Window.width Mouse.x
+
+view : Int -> Int -> Element
+view h y =
+  let
+    side =
+      if y > h // 2 then "Bottom" else "Top"
+  in
+    show side
+
+main : Signal Element
+main =
+  Signal.map2 view Window.height Mouse.y
