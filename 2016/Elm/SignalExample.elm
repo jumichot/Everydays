@@ -44,14 +44,27 @@ import Char
 -- main =
 --   Signal.map2 view Window.width Mouse.x
 
-view : Int -> Int -> Element
-view h y =
-  let
-    side =
-      if y > h // 2 then "Bottom" else "Top"
-  in
-    show side
+-- ================================================
+-- view : Int -> Int -> Element
+-- view h y =
+--   let
+--     side =
+--       if y > h // 2 then "Bottom" else "Top"
+--   in
+--     show side
+
+-- main : Signal Element
+-- main =
+--   Signal.map2 view Window.height Mouse.y
+
+delta : Signal Time.Time
+delta =
+  Signal.map Time.inSeconds(Time.fps 1)
+
+clickPosition : Signal (Int, Int)
+clickPosition =
+  Signal.sampleOn delta Mouse.position
 
 main : Signal Element
 main =
-  Signal.map2 view Window.height Mouse.y
+  Signal.map show clickPosition
