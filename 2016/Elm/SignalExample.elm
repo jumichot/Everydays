@@ -57,14 +57,33 @@ import Char
 -- main =
 --   Signal.map2 view Window.height Mouse.y
 
-delta : Signal Time.Time
-delta =
-  Signal.map Time.inSeconds(Time.fps 1)
+-- ================================================
+-- view : Int -> Int -> Element
+-- delta : Signal Time.Time
+-- delta =
+--   Signal.map Time.inSeconds(Time.fps 1)
 
-clickPosition : Signal (Int, Int)
-clickPosition =
-  Signal.sampleOn delta Mouse.position
+-- clickPosition : Signal (Int, Int)
+-- clickPosition =
+--   Signal.sampleOn delta Mouse.position
+
+-- main : Signal Element
+-- main =
+--   Signal.map show clickPosition
+
+characters : Signal Char
+characters =
+  Signal.map Char.fromCode Keyboard.presses
+
+numbers : Signal Char
+numbers =
+  Signal.filter Char.isDigit '1' characters
+
+noDups : Signal Char
+noDups =
+  Signal.dropRepeats numbers
+
 
 main : Signal Element
 main =
-  Signal.map show clickPosition
+  Signal.map show noDups
