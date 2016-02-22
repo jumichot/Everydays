@@ -2,8 +2,8 @@ import Graphics.Element exposing(..)
 import Mouse
 import Window
 import Keyboard
-import BingoUtils as Utils
 import Time
+import String exposing (toInt, fromChar)
 
 import Char
 
@@ -73,9 +73,9 @@ import Char
 --   Signal.map show clickPosition
 
 -- ================================================
--- characters : Signal Char
--- characters =
---   Signal.map Char.fromCode Keyboard.presses
+characters : Signal Char
+characters =
+  Signal.map Char.fromCode Keyboard.presses
 
 -- numbers : Signal Char
 -- numbers =
@@ -90,14 +90,30 @@ import Char
 -- main =
 --   Signal.map show noDups
 
--- totalNumbers : Signal Int
--- totalNumbers =
---   Signal.foldp (\number count -> count + number) 0 numbers
 
-secondsSoFar : Signal Int
-secondsSoFar =
-  Signal.foldp (\_ count -> count + 1) 0 (Time.every Time.second)
+-- secondsSoFar : Signal Int
+-- secondsSoFar =
+--   Signal.foldp (\_ count -> count + 1) 0 (Time.every Time.second)
+
+-- shortcut
+-- List.foldl (+) 0 [1, 2, 3]
+
+totalNumbers : Signal Int
+totalNumbers =
+  Signal.foldp (\number count -> count + number) 0 integers
+
+parseInt : Char -> Maybe Int
+parseInt character =
+  case String.toInt (String.fromChar character) of
+    Ok value ->
+      Just value
+    Err error ->
+      Nothing
+
+integers : Signal Int
+integers =
+  Signal.filterMap parseInt 0 characters
 
 main : Signal Element
 main =
-  Signal.map show secondsSoFar
+  Signal.map show totalNumbers
