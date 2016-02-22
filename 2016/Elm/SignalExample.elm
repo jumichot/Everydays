@@ -2,6 +2,7 @@ import Graphics.Element exposing(..)
 import Mouse
 import Window
 import Keyboard
+import BingoUtils as Utils
 import Time
 
 import Char
@@ -71,19 +72,32 @@ import Char
 -- main =
 --   Signal.map show clickPosition
 
-characters : Signal Char
-characters =
-  Signal.map Char.fromCode Keyboard.presses
+-- ================================================
+-- characters : Signal Char
+-- characters =
+--   Signal.map Char.fromCode Keyboard.presses
 
-numbers : Signal Char
-numbers =
-  Signal.filter Char.isDigit '1' characters
+-- numbers : Signal Char
+-- numbers =
+  -- Signal.filter Char.isDigit '1' characters
 
-noDups : Signal Char
-noDups =
-  Signal.dropRepeats numbers
+-- noDups : Signal Char
+-- noDups =
+--   Signal.dropRepeats numbers
 
+
+-- main : Signal Element
+-- main =
+--   Signal.map show noDups
+
+-- totalNumbers : Signal Int
+-- totalNumbers =
+--   Signal.foldp (\number count -> count + number) 0 numbers
+
+secondsSoFar : Signal Int
+secondsSoFar =
+  Signal.foldp (\_ count -> count + 1) 0 (Time.every Time.second)
 
 main : Signal Element
 main =
-  Signal.map show noDups
+  Signal.map show secondsSoFar
