@@ -100,7 +100,7 @@ characters =
 
 totalNumbers : Signal Int
 totalNumbers =
-  Signal.foldp (\number count -> count + number) 0 integers
+  Signal.foldp (+) 0 integers
 
 parseInt : Char -> Maybe Int
 parseInt character =
@@ -114,6 +114,11 @@ integers : Signal Int
 integers =
   Signal.filterMap parseInt 0 characters
 
+charactersSoFar : Signal (List Char)
+charactersSoFar =
+  Signal.foldp (::) [] characters
+
 main : Signal Element
 main =
-  Signal.map show totalNumbers
+  Signal.map show charactersSoFar
+
