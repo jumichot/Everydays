@@ -73,9 +73,9 @@ import Char
 --   Signal.map show clickPosition
 
 -- ================================================
-characters : Signal Char
-characters =
-  Signal.map Char.fromCode Keyboard.presses
+-- characters : Signal Char
+-- characters =
+--   Signal.map Char.fromCode Keyboard.presses
 
 -- numbers : Signal Char
 -- numbers =
@@ -98,27 +98,50 @@ characters =
 -- shortcut
 -- List.foldl (+) 0 [1, 2, 3]
 
-totalNumbers : Signal Int
-totalNumbers =
-  Signal.foldp (+) 0 integers
+-- totalNumbers : Signal Int
+-- totalNumbers =
+--   Signal.foldp (+) 0 integers
 
-parseInt : Char -> Maybe Int
-parseInt character =
-  case String.toInt (String.fromChar character) of
-    Ok value ->
-      Just value
-    Err error ->
-      Nothing
+-- parseInt : Char -> Maybe Int
+-- parseInt character =
+--   case String.toInt (String.fromChar character) of
+--     Ok value ->
+--       Just value
+--     Err error ->
+--       Nothing
 
-integers : Signal Int
-integers =
-  Signal.filterMap parseInt 0 characters
+-- integers : Signal Int
+-- integers =
+--   Signal.filterMap parseInt 0 characters
 
-charactersSoFar : Signal (List Char)
-charactersSoFar =
-  Signal.foldp (::) [] characters
+-- charactersSoFar : Signal (List Char)
+-- charactersSoFar =
+--   Signal.foldp (::) [] characters
+
+-- main : Signal Element
+-- main =
+--   Signal.map show charactersSoFar
+
+-- ================================================
+type alias Model = Int
+
+-- MODEL
+initialModel : Model
+initialModel = 0
+
+-- UPDATE
+update : a -> Model -> Model
+update event model =
+  model + 1
+
+model : Signal Model
+model =
+  Signal.foldp update initialModel Mouse.clicks
+
+view : Model -> Element
+view model =
+  show model
 
 main : Signal Element
 main =
-  Signal.map show charactersSoFar
-
+  Signal.map view model
