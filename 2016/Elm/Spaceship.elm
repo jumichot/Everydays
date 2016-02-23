@@ -26,10 +26,23 @@ initialShip =
   }
 
 -- UPDATE
-update : Int -> Model -> Model
-update x ship =
-  { ship | position = ship.position + (x * 20) }
+type Action = NoOp | Left | Right | Fire Bool
 
+update : Action -> Model -> Model
+update action ship =
+  case action of
+    NoOp ->
+      ship
+    Left ->
+      { ship | position = ship.position - 1 }
+    Right ->
+      { ship | position = ship.position + 1 }
+    Fire firing ->
+      let
+        newPowerLevel =
+          if firing then ship.powerLevel - 1 else ship.powerLevel
+      in
+        { ship | isFiring = firing, powerLevel = newPowerLevel }
 
 -- VIEW
 
@@ -63,17 +76,36 @@ drawShip gameHeight ship =
       |> move ((toFloat ship.position), (50 - gameHeight / 2))
       |> alpha ((toFloat ship.powerLevel) / 10)
 
-direction : Signal Int
+-- SIGNALS
+direction : Signal Action
 direction =
   let
     x = Signal.map .x Keyboard.arrows
     delta = Time.fps 30
+
+    toAction n =
+      case n of
+        -1 -> Left
+        1 -> Right
+        _ -> NoOp
+
+    actions =
+      Signal.map toAction x
   in
-    Signal.sampleOn delta x
+    Signal.sampleOn delta actions
+
+fire : Signal Action
+fire =
+  Signal.map Fire Keyboard.space
+
+input : Signal Action
+input =
+  Signal.merge fire direction
+
 
 model : Signal Model
 model =
-  Signal.foldp update initialShip direction
+  Signal.foldp update initialShip input
 
 main : Signal Element
 main =
