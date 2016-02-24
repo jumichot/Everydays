@@ -8,6 +8,14 @@ view greeting =
       p [ ] [ text greeting ]
     ]
 
-main : Html
+inbox : Signal.Mailbox String
+inbox =
+  Signal.mailbox "Waiting..."
+
+messages: Signal String
+messages =
+  inbox.signal
+
+main : Signal Html
 main =
-  view "- - - -"
+  Signal.map view messages
