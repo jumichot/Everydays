@@ -19,9 +19,10 @@
 
 <script type="text/javascript">
   var elmDiv = document.getElementById('elm-app-lives-here');
-  var elmApp = Elm.embed(Elm.Thumbs, elmDiv);
+  var elmApp = Elm.embed(Elm.Thumbs, elmDiv, {comments: "" });
 
   function sendComment(form) {
+    elmApp.ports.comments.send(form.comment.value);
     form.reset();
     return false;
   }
