@@ -21,6 +21,10 @@
   var elmDiv = document.getElementById('elm-app-lives-here');
   var elmApp = Elm.embed(Elm.Thumbs, elmDiv, {comments: "" });
 
+  elmApp.ports.modelChanges.subscribe(function(model) {
+    console.log(model);
+  });
+
   function sendComment(form) {
     elmApp.ports.comments.send(form.comment.value);
     form.reset();
