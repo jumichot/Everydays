@@ -1,5 +1,15 @@
-import Graphics.Element
+module HelloWorld where
 
-main : Graphics.Element.Element
-main = Graphics.Element.show "Hello World"
+import Text
+import Color exposing (lightRed)
+import Graphics.Element exposing (..)
+
+main : Element
+main =
+  Text.fromString "Hello World"
+    |> Text.color lightRed
+    |> Text.italic
+    |> Text.bold
+    |> Text.height 60
+    |> leftAligned
 
