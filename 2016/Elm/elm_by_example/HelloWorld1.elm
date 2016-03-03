@@ -1,15 +1,21 @@
 module HelloWorld where
 
-import Text
+import Text as T
 import Color exposing (lightRed)
 import Graphics.Element exposing (..)
 
+
+makeRedText : T.Text -> T.Text
+makeRedText =
+  T.color lightRed
+
+
 main : Element
 main =
-  Text.fromString "Hello World"
-    |> Text.color lightRed
-    |> Text.italic
-    |> Text.bold
-    |> Text.height 60
+  T.fromString "Hello World"
+    |> makeRedText
+    |> T.italic
+    |> T.bold
+    |> T.height 60
     |> leftAligned
 
