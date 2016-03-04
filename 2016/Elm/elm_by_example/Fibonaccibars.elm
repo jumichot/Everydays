@@ -1,26 +1,31 @@
-module Fibonacci where
+module FibonacciBars where
 
-import Graphics.Element exposing (..)
-import List exposing ((::), map2, reverse)
-
-fibonacci : Int -> List Int
-fibonacci n =
-  let
-    fibonacci' n k0 k1 accu =
-      if n <= 0
-         then
-           accu
-         else
-           fibonacci' (n-1) k1 (k0 + k1) (List.append accu [k1])
-  in
-    fibonacci' n 0 1 []
-
-fibonacciWithIndex : Int -> List (Int, Int)
-fibonacciWithIndex n =
-  List.map2 (,) [0..n] (fibonacci n)
+import Graphics.Element exposing(..)
+import Fibonacci exposing(fibonacciWithIndex)
+import Color exposing (blue, brown, green, orange, purple, red, yellow)
+import Graphics.Collage exposing (collage, filled, rect)
+import Graphics.Element exposing (down, flow, right, show)
+import List exposing (drop, head, length, map)
+import Maybe exposing (withDefault)
 
 
-main : Element
+color n =
+    let colors = [ red, orange, yellow, green, blue, purple, brown ]
+    in
+        drop (n % (length colors)) colors |> head |> withDefault red
+
+
+bar (index, n) =
+    let
+      scale = 30
+      rectWidth = (toFloat n * scale)
+      rectHeight = scale
+      rectShape = rect rectWidth  rectHeight
+      rectForm =  filled (color index) rectShape
+    in
+    flow right [ collage (round rectWidth) rectHeight [rectForm], show n ]
+
+
 main =
-  show (fibonacciWithIndex 5)
-
+  -- flow down (map bar (fibonacciWithIndex 10)) the two are equivalent
+  flow down <| map bar (fibonacciWithIndex 10)
