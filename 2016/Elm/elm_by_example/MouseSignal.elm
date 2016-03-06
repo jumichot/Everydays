@@ -1,13 +1,24 @@
-module MouseSignals2 where
+module MouseSignals3 where
 
 
-import Graphics.Element exposing (Element, show)
+import Graphics.Element exposing (down, flow, leftAligned)
+import List exposing (map)
 import Mouse
-import Signal exposing (map2)
+import Signal exposing (map,sampleOn, map4)
+import Text exposing (fromString)
 
 
-combine : a -> b -> Element
-combine a b = show (a,b)
+showsignals a b c d e f g =
+    flow down <|
+        map (fromString >> leftAligned) [
+                "Mouse.position: " ++ toString a,
+                "Mouse.x: " ++ toString b,
+                "Mouse.y: " ++ toString c,
+                "Mouse.clicks: " ++ toString d,
+                "Mouse.isDown: " ++ toString e,
+                "sampleOn Mouse.clicks Mouse.position: " ++ toString f,
+                "sampleOn Mouse.isDown Mouse.position: " ++ toString g
+            ]
 
 
-main = map2 combine Mouse.x Mouse.y
+main =
