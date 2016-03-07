@@ -4,7 +4,8 @@ module MouseSignals3 where
 import Graphics.Element exposing (down, flow, leftAligned)
 import List exposing (map)
 import Mouse
-import Signal exposing (map,sampleOn, map4)
+import Signal exposing (sampleOn)
+import Signal.Extra exposing ((~), (<~))
 import Text exposing (fromString)
 
 
@@ -22,3 +23,11 @@ showsignals a b c d e f g =
 
 
 main =
+    showsignals
+        <~ Mouse.position
+        ~ Mouse.x
+        ~ Mouse.y
+        ~ Mouse.clicks
+        ~ Mouse.isDown
+        ~ sampleOn Mouse.clicks Mouse.position
+        ~ sampleOn Mouse.isDown Mouse.position
