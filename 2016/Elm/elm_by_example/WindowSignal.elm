@@ -10,7 +10,7 @@ import Window
 
 showsignals a b c =
     flow down <|
-        map (fromString >> leftAligned) [
+        List.map (\x -> leftAligned(fromString x)) [
                 "Window.dimensions: " ++ toString a,
                 "Window.width: " ++ toString b,
                 "Window.height: " ++ toString c

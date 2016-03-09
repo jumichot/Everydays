@@ -23,8 +23,8 @@ showsignals a b c d e f g =
 
 
 main =
-    showsignals
-        <~ Mouse.position
+   Signal.map showsignals
+         Mouse.position
         ~ Mouse.x
         ~ Mouse.y
         ~ Mouse.clicks
