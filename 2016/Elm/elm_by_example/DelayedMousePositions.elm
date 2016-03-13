@@ -1,4 +1,4 @@
-module DelayedMousePosition where
+module DelayedMousePositions where
 
 import Graphics.Element exposing (show)
 import List

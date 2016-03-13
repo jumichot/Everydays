@@ -1,4 +1,4 @@
-module DrawCircle where
+module DrawCircles where
 
 import Array as A
 import Color exposing (Color, blue, brown, green, orange, purple, red, yellow)
