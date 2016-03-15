@@ -1,638 +1,662 @@
 [
   {
-    "id": 117883352,
     "name": "HIRAM MADELAINE",
+    "id": 117883352,
     "photo": "http://photos4.meetupstatic.com/photos/member/a/c/d/c/member_155984252.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/a/c/d/c/thumb_155984252.jpeg"
+    "response": "yes"
   },
   {
-    "id": 193787239,
     "name": "Gabriel Vergnaud",
+    "id": 193787239,
     "photo": "http://photos2.meetupstatic.com/photos/member/6/3/2/d/member_250345389.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/6/3/2/d/thumb_250345389.jpeg"
+    "response": "yes"
   },
   {
-    "id": 8942102,
     "name": "Sébastien Douche",
+    "id": 8942102,
     "photo": "http://photos4.meetupstatic.com/photos/member/d/7/f/a/member_242395290.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/d/7/f/a/thumb_242395290.jpeg"
+    "response": "no"
   },
   {
-    "id": 132387052,
     "name": "Johan",
+    "id": 132387052,
     "photo": "http://photos4.meetupstatic.com/photos/member/3/c/5/c/member_186495452.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/3/c/5/c/thumb_186495452.jpeg"
+    "response": "yes"
   },
   {
-    "id": 39299022,
     "name": "Oleg Sklyanchuk",
+    "id": 39299022,
     "photo": "http://photos3.meetupstatic.com/photos/member/d/a/4/0/member_224755872.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/d/a/4/0/thumb_224755872.jpeg"
+    "response": "yes"
   },
   {
-    "id": 166489932,
     "name": "Alexandre Barbier",
+    "id": 166489932,
     "photo": "http://photos3.meetupstatic.com/photos/member/5/0/7/e/member_242840606.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/5/0/7/e/thumb_242840606.jpeg"
+    "response": "yes"
   },
   {
-    "id": 10132649,
     "name": "Ahmed Radjdi",
+    "id": 10132649,
     "photo": "http://photos4.meetupstatic.com/photos/member/c/2/2/6/member_191089702.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/c/2/2/6/thumb_191089702.jpeg"
+    "response": "yes"
   },
   {
-    "id": 138639092,
     "name": "Alex M",
+    "id": 138639092,
     "photo": "http://photos1.meetupstatic.com/photos/member/9/e/7/2/member_185740562.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/9/e/7/2/thumb_185740562.jpeg"
+    "response": "yes"
   },
   {
-    "id": 138488032,
     "name": "Cédric Gourlay",
+    "id": 138488032,
     "photo": "http://photos4.meetupstatic.com/photos/member/c/a/c/1/member_244491905.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/c/a/c/1/thumb_244491905.jpeg"
+    "response": "yes"
   },
   {
-    "id": 42807422,
     "name": "Samy Dindane",
+    "id": 42807422,
     "photo": "http://photos2.meetupstatic.com/photos/member/2/8/0/9/member_249670249.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/2/8/0/9/thumb_249670249.jpeg"
+    "response": "no"
   },
   {
-    "id": 126212102,
     "name": "Guillaume Spera",
+    "id": 126212102,
     "photo": "http://photos2.meetupstatic.com/photos/member/9/b/6/6/member_237639782.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/9/b/6/6/thumb_237639782.jpeg"
+    "response": "yes"
   },
   {
-    "id": 198833587,
     "name": "Clémentine Houx",
+    "id": 198833587,
     "photo": "http://photos4.meetupstatic.com/photos/member/e/a/0/0/member_253379904.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/e/a/0/0/thumb_253379904.jpeg"
+    "response": "yes"
   },
   {
-    "id": 184540220,
     "name": "Nicolas Gasull",
+    "id": 184540220,
     "photo": "http://photos4.meetupstatic.com/photos/member/1/1/2/f/member_248764399.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/1/1/2/f/thumb_248764399.jpeg"
+    "response": "yes"
   },
   {
-    "id": 9779505,
     "name": "Iván A. Tamayo",
+    "id": 9779505,
     "photo": "http://photos3.meetupstatic.com/photos/member/6/e/4/6/member_243268230.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/6/e/4/6/thumb_243268230.jpeg"
+    "response": "yes"
   },
   {
-    "id": 128669862,
     "name": "Fabien Vauchelles",
+    "id": 128669862,
     "photo": "http://photos4.meetupstatic.com/photos/member/2/3/1/f/member_246548991.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/2/3/1/f/thumb_246548991.jpeg"
+    "response": "no"
   },
   {
-    "id": 28072472,
     "name": "Ernest Duarte",
+    "id": 28072472,
     "photo": "http://photos1.meetupstatic.com/photos/member/7/7/9/e/member_59850622.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/7/7/9/e/thumb_59850622.jpeg"
+    "response": "yes"
   },
   {
-    "id": 8998279,
     "name": "Jérôme Prudent",
+    "id": 8998279,
     "photo": "http://photos1.meetupstatic.com/photos/member/2/0/9/6/member_96668342.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/2/0/9/6/thumb_96668342.jpeg"
+    "response": "yes"
   },
   {
-    "id": 132712392,
     "name": "Karim Ammor",
+    "id": 132712392,
     "photo": "http://photos1.meetupstatic.com/photos/member/7/e/6/0/member_176852352.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/7/e/6/0/thumb_176852352.jpeg"
+    "response": "yes"
   },
   {
-    "id": 137067502,
     "name": "Radu Chiriac",
+    "id": 137067502,
     "photo": "http://photos1.meetupstatic.com/photos/member/5/c/1/e/member_184283582.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/5/c/1/e/thumb_184283582.jpeg"
+    "response": "yes"
   },
   {
-    "id": 32772802,
     "name": "Florent Biville",
+    "id": 32772802,
     "photo": "http://photos1.meetupstatic.com/photos/member/9/2/f/d/member_246157629.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/9/2/f/d/thumb_246157629.jpeg"
+    "response": "yes"
   },
   {
-    "id": 172171782,
     "name": "Alick PAUL",
+    "id": 172171782,
     "photo": "http://photos4.meetupstatic.com/photos/member/b/b/1/4/member_229067892.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/b/b/1/4/thumb_229067892.jpeg"
+    "response": "yes"
   },
   {
-    "id": 86833942,
+    "name": "hugdubois",
+    "id": 31855942,
+    "photo": "http://photos4.meetupstatic.com/photos/member/4/2/1/a/member_181216922.jpeg",
+    "response": "waitlist"
+  },
+  {
     "name": "Fred CECILIA",
+    "id": 86833942,
     "photo": "http://photos2.meetupstatic.com/photos/member/c/8/8/7/member_249411335.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/c/8/8/7/thumb_249411335.jpeg"
+    "response": "yes"
   },
   {
-    "id": 186236004,
     "name": "François Sarradin",
+    "id": 186236004,
     "photo": "http://photos2.meetupstatic.com/photos/member/3/7/4/member_245400884.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/3/7/4/thumb_245400884.jpeg"
+    "response": "yes"
   },
   {
-    "id": 126211272,
     "name": "Damien R.",
+    "id": 126211272,
     "photo": "http://photos1.meetupstatic.com/photos/member/3/4/3/2/member_167293362.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/3/4/3/2/thumb_167293362.jpeg"
+    "response": "yes"
   },
   {
-    "id": 81493232,
     "name": "Stephane Rolland",
+    "id": 81493232,
     "photo": "http://photos4.meetupstatic.com/photos/member/4/9/c/c/member_149358892.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/4/9/c/c/thumb_149358892.jpeg"
+    "response": "yes"
   },
   {
-    "id": 80189612,
     "name": "Alexis MINEAUD",
+    "id": 80189612,
     "photo": "http://photos4.meetupstatic.com/photos/member/5/0/c/0/member_97160672.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/5/0/c/0/thumb_97160672.jpeg"
+    "response": "yes"
   },
   {
-    "id": 93831482,
     "name": "Cédric M.",
+    "id": 93831482,
     "photo": "http://photos1.meetupstatic.com/photos/member/d/d/0/6/member_237956582.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/d/d/0/6/thumb_237956582.jpeg"
+    "response": "yes"
   },
   {
-    "id": 113552202,
     "name": "Felix Billon",
+    "id": 113552202,
     "photo": "http://photos2.meetupstatic.com/photos/member/3/9/c/8/member_183674792.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/3/9/c/8/thumb_183674792.jpeg"
+    "response": "yes"
   },
   {
-    "id": 38445832,
     "name": "Emeric James",
+    "id": 38445832,
     "photo": null,
-    "thumb": null
+    "response": "yes"
   },
   {
-    "id": 176054252,
     "name": "Thomas C",
+    "id": 176054252,
     "photo": "http://photos2.meetupstatic.com/photos/member/9/a/9/4/member_232239572.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/9/a/9/4/thumb_232239572.jpeg"
+    "response": "yes"
   },
   {
-    "id": 83937722,
+    "name": "Mourad Hammiche",
+    "id": 36228352,
+    "photo": "http://photos1.meetupstatic.com/photos/member/d/4/0/a/member_38634282.jpeg",
+    "response": "waitlist"
+  },
+  {
     "name": "Antoine REYT",
+    "id": 83937722,
     "photo": null,
-    "thumb": null
+    "response": "yes"
   },
   {
-    "id": 60159022,
     "name": "Hervé Mignot",
+    "id": 60159022,
     "photo": "http://photos4.meetupstatic.com/photos/member/b/0/3/8/member_69765112.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/b/0/3/8/thumb_69765112.jpeg"
+    "response": "yes"
   },
   {
-    "id": 65598572,
     "name": "Valentin Kasas",
+    "id": 65598572,
     "photo": null,
-    "thumb": null
+    "response": "yes"
   },
   {
-    "id": 193964462,
     "name": "najla ",
+    "id": 193964462,
     "photo": null,
-    "thumb": null
+    "response": "yes"
   },
   {
-    "id": 192061526,
+    "name": "Jonathan",
+    "id": 201269941,
+    "photo": "http://photos4.meetupstatic.com/photos/member/2/e/9/6/member_254651926.jpeg",
+    "response": "waitlist"
+  },
+  {
     "name": "Erwan",
+    "id": 192061526,
     "photo": "http://photos3.meetupstatic.com/photos/member/c/7/3/4/member_249290996.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/c/7/3/4/thumb_249290996.jpeg"
+    "response": "yes"
   },
   {
-    "id": 154481832,
     "name": "Yann SERGENT",
+    "id": 154481832,
     "photo": "http://photos3.meetupstatic.com/photos/member/3/4/8/1/member_246493441.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/3/4/8/1/thumb_246493441.jpeg"
+    "response": "waitlist"
   },
   {
-    "id": 65583792,
     "name": "Joël Matelli",
+    "id": 65583792,
     "photo": "http://photos1.meetupstatic.com/photos/member/7/f/6/e/member_104732622.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/7/f/6/e/thumb_104732622.jpeg"
+    "response": "yes"
   },
   {
-    "id": 19827951,
     "name": "Dorian Lupu",
+    "id": 19827951,
     "photo": "http://photos4.meetupstatic.com/photos/member/a/d/f/3/member_18284531.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/a/d/f/3/thumb_18284531.jpeg"
+    "response": "yes"
   },
   {
-    "id": 77480582,
     "name": "Piotr",
+    "id": 77480582,
     "photo": null,
-    "thumb": null
+    "response": "yes"
   },
   {
-    "id": 118830162,
+    "name": "Romuald ROZAN",
+    "id": 36110462,
+    "photo": "http://photos2.meetupstatic.com/photos/member/2/1/d/c/member_253028668.jpeg",
+    "response": "waitlist"
+  },
+  {
     "name": "Nicolas Kosinski",
+    "id": 118830162,
     "photo": "http://photos3.meetupstatic.com/photos/member/3/a/3/f/member_247934911.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/3/a/3/f/thumb_247934911.jpeg"
+    "response": "yes"
   },
   {
-    "id": 52368652,
     "name": "Julien Michot",
+    "id": 52368652,
     "photo": "http://photos1.meetupstatic.com/photos/member/b/e/3/4/member_59688692.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/b/e/3/4/thumb_59688692.jpeg"
+    "response": "yes"
   },
   {
-    "id": 124148462,
     "name": "Thomas Brisbout",
+    "id": 124148462,
     "photo": "http://photos4.meetupstatic.com/photos/member/b/5/b/7/member_245206519.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/b/5/b/7/thumb_245206519.jpeg"
+    "response": "yes"
   },
   {
-    "id": 31370822,
     "name": "DjebbZ",
+    "id": 31370822,
     "photo": "http://photos2.meetupstatic.com/photos/member/3/a/5/4/member_31694932.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/3/a/5/4/thumb_31694932.jpeg"
+    "response": "yes"
   },
   {
-    "id": 47612242,
     "name": "Bernard Notarianni",
+    "id": 47612242,
     "photo": "http://photos4.meetupstatic.com/photos/member/4/9/e/a/member_161598922.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/4/9/e/a/thumb_161598922.jpeg"
+    "response": "yes"
   },
   {
-    "id": 182943893,
     "name": "nabil170tn",
+    "id": 182943893,
     "photo": "http://photos3.meetupstatic.com/photos/member/6/7/9/3/member_250226515.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/6/7/9/3/thumb_250226515.jpeg"
+    "response": "yes"
   },
   {
-    "id": 80724412,
     "name": "Kevin Le Brun",
+    "id": 80724412,
     "photo": "http://photos1.meetupstatic.com/photos/member/5/c/d/c/member_97943772.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/5/c/d/c/thumb_97943772.jpeg"
+    "response": "yes"
   },
   {
-    "id": 88876812,
     "name": "Roman Wilhelm",
+    "id": 88876812,
     "photo": "http://photos1.meetupstatic.com/photos/member/7/c/5/8/member_221671832.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/7/c/5/8/thumb_221671832.jpeg"
+    "response": "yes"
   },
   {
-    "id": 124030232,
     "name": "Cyril Sobierajewicz",
+    "id": 124030232,
     "photo": "http://photos1.meetupstatic.com/photos/member/7/f/8/5/member_241832645.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/7/f/8/5/thumb_241832645.jpeg"
+    "response": "yes"
   },
   {
-    "id": 51852692,
     "name": "Hugo Agbonon",
+    "id": 51852692,
     "photo": "http://photos4.meetupstatic.com/photos/member/6/0/5/b/member_250164667.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/6/0/5/b/thumb_250164667.jpeg"
+    "response": "yes"
   },
   {
-    "id": 115529072,
     "name": "ronanh",
+    "id": 115529072,
     "photo": "http://photos2.meetupstatic.com/photos/member/7/a/e/6/member_175831462.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/7/a/e/6/thumb_175831462.jpeg"
+    "response": "yes"
   },
   {
-    "id": 74754792,
     "name": "Frédéric BAUCHER",
+    "id": 74754792,
     "photo": "http://photos2.meetupstatic.com/photos/member/2/5/8/2/member_89169602.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/2/5/8/2/thumb_89169602.jpeg"
+    "response": "yes"
   },
   {
-    "id": 132073452,
     "name": "Sylvain Gournay",
+    "id": 132073452,
     "photo": "http://photos4.meetupstatic.com/photos/member/3/5/f/e/member_193213822.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/3/5/f/e/thumb_193213822.jpeg"
+    "response": "yes"
   },
   {
-    "id": 189019693,
     "name": "maxime dantec",
+    "id": 189019693,
     "photo": null,
-    "thumb": null
+    "response": "yes"
   },
   {
-    "id": 13817534,
     "name": "Ludovic Chane",
+    "id": 13817534,
     "photo": "http://photos4.meetupstatic.com/photos/member/c/5/6/b/member_11810539.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/c/5/6/b/thumb_11810539.jpeg"
+    "response": "yes"
   },
   {
-    "id": 30105352,
     "name": "Mario Loriedo",
+    "id": 30105352,
     "photo": "http://photos4.meetupstatic.com/photos/member/8/a/0/3/member_242975331.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/8/a/0/3/thumb_242975331.jpeg"
+    "response": "yes"
   },
   {
-    "id": 185090896,
     "name": "Arnaud Janssens",
+    "id": 185090896,
     "photo": null,
-    "thumb": null
+    "response": "yes"
   },
   {
-    "id": 75574722,
     "name": "Sebastien Lorber",
+    "id": 75574722,
     "photo": "http://photos3.meetupstatic.com/photos/member/5/2/3/2/member_90381042.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/5/2/3/2/thumb_90381042.jpeg"
+    "response": "yes"
   },
   {
-    "id": 188208956,
     "name": "Marine Franceschi",
+    "id": 188208956,
     "photo": "http://photos2.meetupstatic.com/photos/member/9/0/c/d/member_246757069.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/9/0/c/d/thumb_246757069.jpeg"
+    "response": "yes"
   },
   {
-    "id": 187532599,
     "name": "Pascal Germain",
+    "id": 187532599,
     "photo": "http://photos1.meetupstatic.com/photos/member/f/e/4/member_246304068.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/f/e/4/thumb_246304068.jpeg"
+    "response": "yes"
   },
   {
-    "id": 99023212,
     "name": "Adrien Becchis",
+    "id": 99023212,
     "photo": "http://photos2.meetupstatic.com/photos/member/b/6/e/4/member_253306820.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/b/6/e/4/thumb_253306820.jpeg"
+    "response": "yes"
   },
   {
-    "id": 121123362,
     "name": "Noah",
+    "id": 121123362,
     "photo": "http://photos1.meetupstatic.com/photos/member/d/4/5/9/member_253014361.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/d/4/5/9/thumb_253014361.jpeg"
+    "response": "yes"
   },
   {
-    "id": 117160052,
     "name": "Felix Le Chevallier",
+    "id": 117160052,
     "photo": "http://photos1.meetupstatic.com/photos/member/e/2/7/4/member_154797972.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/e/2/7/4/thumb_154797972.jpeg"
+    "response": "yes"
   },
   {
-    "id": 185769352,
     "name": "Gildas C.",
+    "id": 185769352,
     "photo": "http://photos4.meetupstatic.com/photos/member/a/f/a/d/member_245024973.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/a/f/a/d/thumb_245024973.jpeg"
+    "response": "yes"
   },
   {
-    "id": 100278942,
     "name": "Siegfried Ehret",
+    "id": 100278942,
     "photo": "http://photos1.meetupstatic.com/photos/member/b/0/c/e/member_128985262.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/b/0/c/e/thumb_128985262.jpeg"
+    "response": "yes"
   },
   {
-    "id": 12463968,
     "name": "Mael Sicsic",
+    "id": 12463968,
     "photo": "http://photos2.meetupstatic.com/photos/member/7/c/c/b/member_251551947.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/7/c/c/b/thumb_251551947.jpeg"
+    "response": "yes"
   },
   {
-    "id": 185151288,
     "name": "Adrien Maillol",
+    "id": 185151288,
     "photo": "http://photos4.meetupstatic.com/photos/member/4/3/7/2/member_244457266.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/4/3/7/2/thumb_244457266.jpeg"
+    "response": "yes"
   },
   {
-    "id": 192677386,
     "name": "François Gilbert",
+    "id": 192677386,
     "photo": "http://photos3.meetupstatic.com/photos/member/2/3/b/2/member_249669138.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/2/3/b/2/thumb_249669138.jpeg"
+    "response": "yes"
   },
   {
-    "id": 194271753,
     "name": "jean charles cabelguen",
+    "id": 194271753,
     "photo": null,
-    "thumb": null
+    "response": "yes"
   },
   {
-    "id": 129757012,
     "name": "Yann CHERIET",
+    "id": 129757012,
     "photo": "http://photos2.meetupstatic.com/photos/member/4/2/7/member_250141063.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/4/2/7/thumb_250141063.jpeg"
+    "response": "no"
   },
   {
-    "id": 197956167,
     "name": "AntoineJ",
+    "id": 197956167,
     "photo": "http://photos1.meetupstatic.com/photos/member/2/9/7/1/member_253270609.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/2/9/7/1/thumb_253270609.jpeg"
+    "response": "yes"
   },
   {
-    "id": 165420762,
     "name": "Spk Ito",
+    "id": 165420762,
     "photo": "http://photos1.meetupstatic.com/photos/member/e/b/2/member_223203762.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/e/b/2/thumb_223203762.jpeg"
+    "response": "yes"
   },
   {
-    "id": 195730306,
     "name": "DEGRANGE",
+    "id": 195730306,
     "photo": "http://photos3.meetupstatic.com/photos/member/7/c/f/1/member_251491985.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/7/c/f/1/thumb_251491985.jpeg"
+    "response": "yes"
   },
   {
-    "id": 45500022,
     "name": "Mathieu Breton",
+    "id": 45500022,
     "photo": "http://photos4.meetupstatic.com/photos/member/c/6/c/2/member_51170882.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/c/6/c/2/thumb_51170882.jpeg"
+    "response": "yes"
   },
   {
-    "id": 103646722,
     "name": "Adrien Baumann",
+    "id": 103646722,
     "photo": "http://photos2.meetupstatic.com/photos/member/3/d/f/6/member_134715862.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/3/d/f/6/thumb_134715862.jpeg"
+    "response": "yes"
   },
   {
-    "id": 144630422,
     "name": "Etienne DD",
+    "id": 144630422,
     "photo": null,
-    "thumb": null
+    "response": "waitlist"
   },
   {
-    "id": 197166630,
     "name": "Marc-Yervant Halard",
+    "id": 197166630,
     "photo": "http://photos2.meetupstatic.com/photos/member/d/4/3/1/member_252294321.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/d/4/3/1/thumb_252294321.jpeg"
+    "response": "yes"
   },
   {
-    "id": 26458992,
     "name": "Yannick Francois",
+    "id": 26458992,
     "photo": "http://photos4.meetupstatic.com/photos/member/9/a/d/a/member_196719642.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/9/a/d/a/thumb_196719642.jpeg"
+    "response": "yes"
   },
   {
-    "id": 184187060,
     "name": "Florent Dancy",
+    "id": 184187060,
     "photo": "http://photos3.meetupstatic.com/photos/member/3/9/4/f/member_243554671.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/3/9/4/f/thumb_243554671.jpeg"
+    "response": "no"
   },
   {
-    "id": 75480692,
     "name": "Amelie Medem",
+    "id": 75480692,
     "photo": "http://photos2.meetupstatic.com/photos/member/2/0/b/f/member_253028383.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/2/0/b/f/thumb_253028383.jpeg"
+    "response": "yes"
   },
   {
-    "id": 185798207,
     "name": "Assma",
+    "id": 185798207,
     "photo": "http://photos2.meetupstatic.com/photos/member/6/1/e/8/member_253585064.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/6/1/e/8/thumb_253585064.jpeg"
+    "response": "yes"
   },
   {
-    "id": 35500462,
     "name": "Florent DUVEAU",
+    "id": 35500462,
     "photo": "http://photos1.meetupstatic.com/photos/member/9/4/a/e/member_37598062.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/9/4/a/e/thumb_37598062.jpeg"
+    "response": "yes"
   },
   {
-    "id": 192814539,
     "name": "Gilles RIVIERE",
+    "id": 192814539,
     "photo": "http://photos3.meetupstatic.com/photos/member/9/8/b/a/member_249759098.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/9/8/b/a/thumb_249759098.jpeg"
+    "response": "yes"
   },
   {
-    "id": 195834421,
     "name": "Sébastien Crème",
+    "id": 195834421,
     "photo": "http://photos3.meetupstatic.com/photos/member/7/f/a/1/member_251552673.jpeg",
-    "thumb": "http://photos1.meetupstatic.com/photos/member/7/f/a/1/thumb_251552673.jpeg"
+    "response": "yes"
   },
   {
-    "id": 197709117,
     "name": "Dihede namane",
+    "id": 197709117,
     "photo": "http://photos4.meetupstatic.com/photos/member/d/0/6/a/member_253313354.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/d/0/6/a/thumb_253313354.jpeg"
+    "response": "yes"
   },
   {
-    "id": 189194379,
     "name": "Arnaud Lewis",
+    "id": 189194379,
     "photo": "http://photos1.meetupstatic.com/photos/member/7/b/c/c/member_247411692.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/7/b/c/c/thumb_247411692.jpeg"
+    "response": "yes"
   },
   {
-    "id": 41496902,
     "name": "Antoine Jackson",
+    "id": 41496902,
     "photo": "http://photos4.meetupstatic.com/photos/member/7/0/7/8/member_161068792.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/7/0/7/8/thumb_161068792.jpeg"
+    "response": "yes"
   },
   {
-    "id": 106692192,
     "name": "Sébastien Ferré",
+    "id": 106692192,
     "photo": "http://photos4.meetupstatic.com/photos/member/5/9/2/6/member_139702822.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/5/9/2/6/thumb_139702822.jpeg"
+    "response": "yes"
   },
   {
-    "id": 82293532,
     "name": "Matthieu King Kluj",
+    "id": 82293532,
     "photo": "http://photos2.meetupstatic.com/photos/member/1/2/c/c/member_100324812.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/1/2/c/c/thumb_100324812.jpeg"
+    "response": "yes"
   },
   {
-    "id": 43404752,
     "name": "Freddy Harris",
+    "id": 43404752,
     "photo": "http://photos2.meetupstatic.com/photos/member/4/3/5/a/member_113297242.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/4/3/5/a/thumb_113297242.jpeg"
+    "response": "yes"
   },
   {
-    "id": 11995020,
     "name": "Luis Arias",
+    "id": 11995020,
     "photo": "http://photos4.meetupstatic.com/photos/member/3/e/c/4/member_251476068.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/3/e/c/4/thumb_251476068.jpeg"
+    "response": "yes"
   },
   {
-    "id": 19406151,
     "name": "Paul Chavard",
+    "id": 19406151,
     "photo": "http://photos4.meetupstatic.com/photos/member/7/b/e/a/member_32311722.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/7/b/e/a/thumb_32311722.jpeg"
+    "response": "yes"
   },
   {
-    "id": 177787452,
     "name": "Choucri FAHED",
+    "id": 177787452,
     "photo": "http://photos4.meetupstatic.com/photos/member/9/4/3/6/member_234637942.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/9/4/3/6/thumb_234637942.jpeg"
+    "response": "yes"
   },
   {
-    "id": 10872665,
     "name": "Arnaud \\ oz",
+    "id": 10872665,
     "photo": null,
-    "thumb": null
+    "response": "yes"
   },
   {
-    "id": 44924462,
     "name": "Stéphane sollat",
+    "id": 44924462,
     "photo": null,
-    "thumb": null
+    "response": "yes"
   },
   {
-    "id": 146332402,
     "name": "Pierrick Le Blond",
+    "id": 146332402,
     "photo": "http://photos1.meetupstatic.com/photos/member/8/a/4/0/member_197195392.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/8/a/4/0/thumb_197195392.jpeg"
+    "response": "yes"
   },
   {
-    "id": 184403913,
     "name": "Antoine Viau",
+    "id": 184403913,
     "photo": null,
-    "thumb": null
+    "response": "yes"
   },
   {
-    "id": 186024446,
     "name": "Jeroen Engels",
+    "id": 186024446,
     "photo": "http://photos3.meetupstatic.com/photos/member/3/1/9/1/member_245232689.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/3/1/9/1/thumb_245232689.jpeg"
+    "response": "yes"
   },
   {
-    "id": 148652152,
     "name": "Aurélie Violette",
+    "id": 148652152,
     "photo": "http://photos2.meetupstatic.com/photos/member/1/1/0/a/member_200464362.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/1/1/0/a/thumb_200464362.jpeg"
+    "response": "yes"
   },
   {
-    "id": 20670271,
     "name": "Charles Denke",
+    "id": 20670271,
     "photo": "http://photos2.meetupstatic.com/photos/member/2/1/3/member_19200531.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/2/1/3/thumb_19200531.jpeg"
+    "response": "yes"
   },
   {
-    "id": 11189387,
     "name": "Bruno Michel",
+    "id": 11189387,
     "photo": "http://photos4.meetupstatic.com/photos/member/5/e/8/8/member_8604200.jpeg",
-    "thumb": "http://photos2.meetupstatic.com/photos/member/5/e/8/8/thumb_8604200.jpeg"
+    "response": "yes"
   },
   {
-    "id": 131637592,
     "name": "Fy",
+    "id": 131637592,
     "photo": "http://photos3.meetupstatic.com/photos/member/5/b/c/4/member_175223492.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/5/b/c/4/thumb_175223492.jpeg"
+    "response": "yes"
   },
   {
-    "id": 46792362,
     "name": "Georges Dubus",
+    "id": 46792362,
     "photo": "http://photos3.meetupstatic.com/photos/member/8/4/b/d/member_253533981.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/8/4/b/d/thumb_253533981.jpeg"
+    "response": "yes"
   },
   {
-    "id": 182725339,
     "name": "Gorilla",
+    "id": 182725339,
     "photo": "http://photos4.meetupstatic.com/photos/member/2/5/0/0/member_241809472.jpeg",
-    "thumb": "http://photos4.meetupstatic.com/photos/member/2/5/0/0/thumb_241809472.jpeg"
+    "response": "yes"
   },
   {
-    "id": 14400697,
     "name": "Frédéric G. MARAND",
+    "id": 14400697,
     "photo": "http://photos1.meetupstatic.com/photos/member/2/0/d/c/member_104888412.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/2/0/d/c/thumb_104888412.jpeg"
+    "response": "yes"
   },
   {
-    "id": 186725269,
     "name": "Samuel Brillon",
+    "id": 186725269,
     "photo": "http://photos1.meetupstatic.com/photos/member/d/d/a/4/member_245756740.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/d/d/a/4/thumb_245756740.jpeg"
+    "response": "yes"
   },
   {
-    "id": 27676322,
     "name": "Christophe Rosset (topheman)",
+    "id": 27676322,
     "photo": "http://photos1.meetupstatic.com/photos/member/a/f/d/4/member_34185012.jpeg",
-    "thumb": "http://photos3.meetupstatic.com/photos/member/a/f/d/4/thumb_34185012.jpeg"
+    "response": "yes"
   }
 ]
