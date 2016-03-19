@@ -2,23 +2,43 @@ module Main (..) where
 
 import Html
 import Time
-
-
-clockSignal : Signal Time.Time
-clockSignal =
-  Time.every Time.second
-
-
-messageSignal : Signal String
-messageSignal =
-  Signal.map toString clockSignal
-
+import Http
+import Task
 
 view : String -> Html.Html
 view message =
   Html.text message
 
+clockSignal : Signal Time.Time
+clockSignal =
+  Time.every (2 * Time.second)
+
+mb : Signal.Mailbox String
+mb =
+  Signal.mailbox ""
+
+httpTask : Task.Task Http.Error String
+httpTask =
+  Http.getString "http://localhost:3000/"
+
+sendToMb : String -> Task.Task x ()
+sendToMb result =
+  Signal.send mb.address result
+
+runTask : Task.Task Http.Error ()
+runTask =
+  Task.andThen httpTask sendToMb
+
+taskSignal : Signal (Task.Task Http.Error ())
+taskSignal =
+  Signal.map (\_ -> runTask) clockSignal
+
 
 main : Signal.Signal Html.Html
 main =
-  Signal.map view messageSignal
+  Signal.map view mb.signal
+
+
+port runner : Signal (Task.Task Http.Error ())
+port runner =
+  taskSignal
