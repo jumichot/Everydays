@@ -28,15 +28,8 @@ update : Action -> Model -> Model
 update action model =
   case action of
     Insert ->
-      let
-        newCounter =
-          ( model.nextId, Counter.init 0 )
-
-        newCounters =
-          model.counters ++ [ newCounter ]
-      in
         { model
-          | counters = newCounters
+          | counters = ( model.nextId, Counter.init 0 ) :: model.counters
           , nextId = model.nextId + 1
         }
 
