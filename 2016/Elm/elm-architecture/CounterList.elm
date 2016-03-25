@@ -7,11 +7,15 @@ import Html.Events exposing (..)
 
 
 type alias Model =
-  { counters : List Counter.Model, nextId : ID }
+  { counters : List ( ID, Counter.Model ), nextId : ID }
 
 
 type alias ID =
   Int
+
+init :  Model
+init =
+  { counters = [], nextId = 0 }
 
 
 type Action
@@ -20,5 +24,46 @@ type Action
   | Modify ID Counter.Action
 
 
+update : Action -> Model -> Model
+update action model =
+  case action of
+    Insert ->
+      let
+        newCounter =
+          ( model.nextId, Counter.init 0 )
+
+        newCounters =
+          model.counters ++ [ newCounter ]
+      in
+        { model
+          | counters = newCounters
+          , nextId = model.nextId + 1
+        }
+
+    Remove ->
+      { model | counters = List.drop 1 model.counters }
+
+    Modify id counterAction ->
+      let
+        updateCounter ( counterId, counterModel ) =
+          if id == counterId
+             then ( counterId, Counter.update counterAction counterModel )
+             else ( counterId, counterModel )
+      in
+        { model | counters = List.map updateCounter model.counters }
+
+
+view : Signal.Address Action -> Model -> Html
+view address model =
+  let counters = List.map (viewCounter address) model.counters
+      remove = button [ onClick address Remove ] [ text "Remove" ]
+      insert = button [ onClick address Insert ] [ text "Add" ]
+  in
+      div [] ([remove, insert] ++ counters)
+
+viewCounter : Signal.Address Action -> (ID, Counter.Model) -> Html
+viewCounter address (id, model) =
+  Counter.view (Signal.forwardTo address (Modify id)) model
+
 main =
-  text "Hello world"
+  StartApp.start { model = init , update = update , view = view }
