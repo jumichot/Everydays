@@ -1,7 +1,8 @@
 import StartApp.Simple
 import Html exposing(..)
 import Html.Attributes exposing(..)
-import Html.Events exposing (onKeyPress)
+import Html.Events exposing (onKeyPress, on, targetValue)
+import Debug
 
 
 type alias Todo =
@@ -25,6 +26,7 @@ type Action
   | Add Todo
   | Complete Todo
   | Delete Todo
+  | UpdateTitle String
   | Filter FilterState
 
 mockTodo : Todo
@@ -36,10 +38,15 @@ mockTodo =
 
 handleKeyPress : Int -> Action
 handleKeyPress code =
-  Add mockTodo
+  case code of
+    13 ->
+      Add mockTodo
+    _ ->
+      NoOp
 
 update : Action -> Model -> Model
 update action model =
+
   case action of
     Add todo ->
       {model | todos = todo :: model.todos}
@@ -49,6 +56,12 @@ update action model =
       model
     Filter filterState ->
       model
+    UpdateTitle str ->
+      let
+          todo = model.todo
+          updatedTodo = { todo | title = str }
+      in
+         {model | todo = updatedTodo }
     NoOp ->
       model
 
@@ -75,7 +88,14 @@ view address model =
     [
       header [class "header"]
       [ h1 [] [text "Todos"]
-      , input [class "new-todo", placeholder "What need to be done", autofocus True, onKeyPress address handleKeyPress] []
+      , input 
+        [class "new-todo"
+        , placeholder "What need to be done"
+        , autofocus True
+        , onKeyPress address handleKeyPress
+        , value model.todo.title
+        , on "input" targetValue (\str -> Signal.message address (UpdateTitle str))
+        ] []
       ]
     ]
   , section [ class "main" ]
