@@ -34,12 +34,12 @@ css : String -> Html
 css path =
   node "link" [ rel "stylesheet", href path ] []
 
-todoView : Html
-todoView =
-  li [class "completed"]
+todoView : Todo -> Html
+todoView todo =
+  li [classList [ ("completed", todo.completed) ]]
   [ div [class "view"]
-    [ input [class "toggle", type' "checkbox", checked True] []
-    , label [] [ text "First todo" ]
+    [ input [class "toggle", type' "checkbox", checked todo.completed] []
+    , label [] [ text todo.title ]
     , button [class "destroy"] []
     ]
   ]
@@ -58,15 +58,15 @@ view address model =
   , section [ class "main" ]
     [
       ul [class "todo-list"]
-      [ todoView ]
+      (List.map todoView model.todos)
     ]
   ]
 
 initialModel : Model
 initialModel =
   { filter = All
-  , todo = { title = "Test", completed = False, editing = False }
-  , todos = []
+  , todo = { title = "", completed = False, editing = False }
+  , todos = [{ title = "First", completed = False, editing = False }]
   }
 
 main =
