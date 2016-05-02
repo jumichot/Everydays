@@ -1,7 +1,7 @@
 import StartApp.Simple
 import Html exposing(..)
 import Html.Attributes exposing(..)
-import Html.Events exposing (onKeyPress, on, targetValue)
+import Html.Events exposing (onKeyPress, on, targetValue, targetChecked)
 import Debug
 
 
@@ -9,6 +9,7 @@ type alias Todo =
   { title : String
   , completed : Bool
   , editing : Bool
+  , identifier : Int
   }
 
 type alias Todos = List Todo
@@ -19,6 +20,7 @@ type alias Model =
   { todos : Todos
   , todo : Todo
   , filter : FilterState
+  , nextIdentifier : Int
   }
 
 type Action
@@ -34,6 +36,7 @@ mockTodo =
   { title = "A mock todo..."
   , completed = False
   , editing = False
+  , identifier = 15
   }
 
 handleKeyPress : Int -> Action
@@ -50,9 +53,17 @@ update action model =
     Add todo ->
       { model | todos = todo :: model.todos
       , todo = newTodo
+      , nextIdentifier = model.nextIdentifier + 1
       }
     Complete todo ->
-      model
+      let
+        updateTodo thisTodo =
+          if thisTodo.identifier == todo.identifier then
+            { todo | completed = True }
+          else
+            thisTodo
+      in
+        {model | todos = List.map updateTodo model.todos }
     Delete todo ->
       model
     Filter filterState ->
@@ -70,11 +81,16 @@ css : String -> Html
 css path =
   node "link" [ rel "stylesheet", href path ] []
 
-todoView : Todo -> Html
-todoView todo =
+todoView : Signal.Address Action -> Todo -> Html
+todoView address todo =
   li [classList [ ("completed", todo.completed) ]]
   [ div [class "view"]
-    [ input [class "toggle", type' "checkbox", checked todo.completed] []
+    [ input 
+      [class "toggle"
+      , type' "checkbox"
+      , on "change" targetChecked (\bool -> Signal.message address (Complete todo))
+      , checked todo.completed
+      ] []
     , label [] [ text todo.title ]
     , button [class "destroy"] []
     ]
@@ -102,7 +118,7 @@ view address model =
   , section [ class "main" ]
     [
       ul [class "todo-list"]
-      (List.map todoView model.todos)
+      (List.map (todoView address) model.todos)
     ]
   ]
 
@@ -111,13 +127,15 @@ newTodo =
   { title = ""
   , completed = False
   , editing = False
+  , identifier = 0
   }
 
 initialModel : Model
 initialModel =
   { filter = All
-  , todo = newTodo
-  , todos = [{ title = "First", completed = False, editing = False }]
+  , todo = { newTodo | identifier = 2 }
+  , todos = [{ title = "First", completed = False, editing = False, identifier = 1 }]
+  , nextIdentifier = 3
   }
 
 main =
