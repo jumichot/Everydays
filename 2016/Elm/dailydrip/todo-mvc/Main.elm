@@ -46,10 +46,11 @@ handleKeyPress code =
 
 update : Action -> Model -> Model
 update action model =
-
   case action of
     Add todo ->
-      {model | todos = todo :: model.todos}
+      { model | todos = todo :: model.todos
+      , todo = newTodo
+      }
     Complete todo ->
       model
     Delete todo ->
@@ -105,10 +106,17 @@ view address model =
     ]
   ]
 
+newTodo : Todo
+newTodo =
+  { title = ""
+  , completed = False
+  , editing = False
+  }
+
 initialModel : Model
 initialModel =
   { filter = All
-  , todo = { title = "", completed = False, editing = False }
+  , todo = newTodo
   , todos = [{ title = "First", completed = False, editing = False }]
   }
 
