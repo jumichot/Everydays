@@ -34,6 +34,15 @@ css : String -> Html
 css path =
   node "link" [ rel "stylesheet", href path ] []
 
+todoView : Html
+todoView =
+  li [class "completed"]
+  [ div [class "view"]
+    [ input [class "toggle", type' "checkbox", checked True] []
+    , label [] [ text "First todo" ]
+    , button [class "destroy"] []
+    ]
+  ]
 
 view : Signal.Address Action -> Model -> Html
 view address model =
@@ -48,18 +57,10 @@ view address model =
     ]
   , section [ class "main" ]
     [
-      ul [class "todo-list"] 
-      [ li [class "completed"] 
-        [ div [class "view"] 
-          [ input [class "toggle", type' "checkbox", checked True] []
-          , label [] [ text "First todo" ]
-          , button [class "destroy"] []
-          ]
-        ]
-      ]
+      ul [class "todo-list"]
+      [ todoView ]
     ]
   ]
-  -- div [] [text (toString model)]
 
 initialModel : Model
 initialModel =
