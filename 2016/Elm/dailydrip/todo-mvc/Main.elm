@@ -46,6 +46,18 @@ view address model =
       , input [class "new-todo", placeholder "What need to be done", autofocus True] []
       ]
     ]
+  , section [ class "main" ]
+    [
+      ul [class "todo-list"] 
+      [ li [class "completed"] 
+        [ div [class "view"] 
+          [ input [class "toggle", type' "checkbox", checked True] []
+          , label [] [ text "First todo" ]
+          , button [class "destroy"] []
+          ]
+        ]
+      ]
+    ]
   ]
   -- div [] [text (toString model)]
 
