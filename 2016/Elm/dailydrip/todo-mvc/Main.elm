@@ -1,5 +1,6 @@
-import StartApp.Simple exposing(start)
+import StartApp.Simple
 import Html exposing(..)
+import Html.Attributes exposing(..)
 
 
 type alias Todo =
@@ -29,9 +30,24 @@ update : Action -> Model -> Model
 update action model =
   model
 
+css : String -> Html
+css path =
+  node "link" [ rel "stylesheet", href path ] []
+
+
 view : Signal.Address Action -> Model -> Html
 view address model =
-  div [] [text (toString model)]
+  div []
+  [ css "style.css"
+  , section [class "todoapp"]
+    [
+      header [class "header"]
+      [ h1 [] [text "Todos"]
+      , input [class "new-todo", placeholder "What need to be done", autofocus True] []
+      ]
+    ]
+  ]
+  -- div [] [text (toString model)]
 
 initialModel : Model
 initialModel =
@@ -41,4 +57,4 @@ initialModel =
   }
 
 main =
-  start { view = view, model = initialModel, update = update }
+  StartApp.Simple.start { view = view, model = initialModel, update = update }
