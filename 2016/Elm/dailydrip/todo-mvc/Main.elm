@@ -1,6 +1,7 @@
 import StartApp.Simple
 import Html exposing(..)
 import Html.Attributes exposing(..)
+import Html.Events exposing (onKeyPress)
 
 
 type alias Todo =
@@ -26,9 +27,30 @@ type Action
   | Delete Todo
   | Filter FilterState
 
+mockTodo : Todo
+mockTodo =
+  { title = "A mock todo..."
+  , completed = False
+  , editing = False
+  }
+
+handleKeyPress : Int -> Action
+handleKeyPress code =
+  Add mockTodo
+
 update : Action -> Model -> Model
 update action model =
-  model
+  case action of
+    Add todo ->
+      {model | todos = todo :: model.todos}
+    Complete todo ->
+      model
+    Delete todo ->
+      model
+    Filter filterState ->
+      model
+    NoOp ->
+      model
 
 css : String -> Html
 css path =
@@ -44,6 +66,7 @@ todoView todo =
     ]
   ]
 
+
 view : Signal.Address Action -> Model -> Html
 view address model =
   div []
@@ -52,7 +75,7 @@ view address model =
     [
       header [class "header"]
       [ h1 [] [text "Todos"]
-      , input [class "new-todo", placeholder "What need to be done", autofocus True] []
+      , input [class "new-todo", placeholder "What need to be done", autofocus True, onKeyPress address handleKeyPress] []
       ]
     ]
   , section [ class "main" ]
