@@ -1,7 +1,9 @@
 import Html exposing (..)
 import Http
-import Json.Decode exposing(object2, (:=), string, Decoder)
+import Json.Decode exposing (int, string, float, Decoder)
+import Json.Decode.Pipeline exposing (decode, required, optional, hardcoded)
 import Task exposing(Task, andThen)
+
 
 -- MODEL
 type alias Model =
@@ -28,9 +30,9 @@ fetchApi =
 
 decoder : Decoder Model
 decoder =
-  object2 Model
-    ("ip" := string)
-    ("about" := string)
+  decode Model
+  |> required "ip" string
+  |> required "about" string
 
 handleResponse data =
   Signal.send mailbox.address data
