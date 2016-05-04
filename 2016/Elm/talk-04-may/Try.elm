@@ -1,6 +1,6 @@
 import Html exposing (..)
 import Task exposing(Task, andThen)
-import Json.Decode exposing (Decoder, int, string, object3, (:=), at, keyValuePairs)
+import Json.Decode exposing (Decoder, int, string, object1, object3, (:=), at, keyValuePairs)
 
 import Http
 
@@ -8,7 +8,6 @@ import Http
 type alias Model =
   { ip : String }
 
-mailbox :  Signal.Mailbox Model
 mailbox =
   Signal.mailbox (Model "0.0.0.0")
 
@@ -20,15 +19,20 @@ view model =
 -- API
 api = "http://jsonip.com/"
 
--- fetchApi =
---   Http.get ("ip" := Json.Decode.string) api
+decoder : Decoder Model
+decoder =
+    object1 Model
+        ("ip" := string)
 
--- handleResponse data =
---   Signal.send mailbox.address data
+fetchApi =
+  Http.get decoder api
 
--- port run : Task Http.Error ()
--- port run =
---   fetchApi `andThen` handleResponse
+handleResponse data =
+  Signal.send mailbox.address data
+
+port run : Task Http.Error ()
+port run =
+  fetchApi `andThen` handleResponse
 
 main : Signal Html
 main =
