@@ -25,7 +25,7 @@ type alias Model =
 
 type Action
   = NoOp
-  | Add Todo
+  | Add
   | Complete Todo
   | Delete Todo
   | UpdateTitle String
@@ -43,16 +43,16 @@ handleKeyPress : Int -> Action
 handleKeyPress code =
   case code of
     13 ->
-      Add mockTodo
+      Add
     _ ->
       NoOp
 
 update : Action -> Model -> Model
 update action model =
   case action of
-    Add todo ->
-      { model | todos = todo :: model.todos
-      , todo = newTodo
+    Add ->
+      { model | todos = model.todo :: model.todos
+      , todo = { newTodo | identifier = model.nextIdentifier }
       , nextIdentifier = model.nextIdentifier + 1
       }
     Complete todo ->
@@ -97,6 +97,16 @@ todoView address todo =
   ]
 
 
+filterItemView : Signal.Address Action -> Model -> FilterState -> Html
+filterItemView address model filterState =
+  li []
+  [ a
+    [ classList [("selected", (model.filter == filterState) )]
+    , href "#"
+    ]
+    [text (toString filterState)]
+  ]
+
 view : Signal.Address Action -> Model -> Html
 view address model =
   div []
@@ -120,6 +130,18 @@ view address model =
       ul [class "todo-list"]
       (List.map (todoView address) model.todos)
     ]
+  , footer [class "footer"]
+      [ span [class "todo-count"]
+        [ strong [] [ text (toString (List.length model.todos)) ]
+        , text " items left"
+        ]
+      , ul [class "filters"]
+        [ filterItemView address model All
+        , filterItemView address model Active
+        , filterItemView address model Completed
+        ]
+      , button [class "clear-completed"] [text "Clear completed"]
+      ]
   ]
 
 newTodo : Todo
