@@ -1,31 +1,36 @@
 import Html exposing (..)
-import Task exposing(Task, andThen)
-import Json.Decode exposing (Decoder, int, string, object1, object3, (:=), at, keyValuePairs)
-
 import Http
+import Json.Decode exposing(object2, (:=), string, Decoder)
+import Task exposing(Task, andThen)
 
 -- MODEL
 type alias Model =
-  { ip : String }
+  { ip : String , about : String }
 
+initialModel = Model "0.0.0.0" "hello"
+
+mailbox : Signal.Mailbox Model
 mailbox =
-  Signal.mailbox (Model "0.0.0.0")
+  Signal.mailbox initialModel
 
 -- VIEW
 view : Model -> Html
 view model =
-  text (toString model)
+  div []
+  [ text (toString model.ip)
+  , br [] []
+  , text (toString model.about)
+  ]
 
--- API
-api = "http://jsonip.com/"
+-- HTTP
+fetchApi =
+  Http.get decoder "http://jsonip.com"
 
 decoder : Decoder Model
 decoder =
-    object1 Model
-        ("ip" := string)
-
-fetchApi =
-  Http.get decoder api
+  object2 Model
+    ("ip" := string)
+    ("about" := string)
 
 handleResponse data =
   Signal.send mailbox.address data
