@@ -42,7 +42,7 @@ decoder =
   |> required "id" int
   |> required "name" string
   |> required "response" string
-  |> optional "photo_link" string "nop"
+  |> optional "photo" string "http://placehold.it/350x150"
 
 listDecoder=
   list decoder
