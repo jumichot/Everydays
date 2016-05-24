@@ -1,14 +1,26 @@
 <h1>New user for Rumbl !</h1>
 
+<%= if @changeset.action do %>
+  <div class="alert alert-danger">
+    <p>Oops, something went wrong! Please check the errors below.</p>
+    <br>
+    <h3>Changeset :</h3>
+    <p><%= inspect(@changeset) %></p>
+  </div>
+<% end %>
+
 <%= form_for @changeset, user_path(@conn, :create), fn f -> %>
   <div class="form-group">
     <%= text_input f, :name, placeholder: "Name", class: "form-control" %>
+    <%= error_tag f, :name %>
   </div>
   <div class="form-group">
     <%= text_input f, :username, placeholder: "Username", class: "form-control" %>
+    <%= error_tag f, :username %>
   </div>
   <div class="form-group">
     <%= password_input f, :passowrd, placeholder: "Password", class: "form-control" %>
+    <%= error_tag f, :passowrd %>
   </div>
   <%= submit "Create User", class: "btn btn-primary" %>
 <% end %>
