@@ -1,0 +1,4 @@
+<%= render "user.html", user: @user %>
+<br>
+<%= link "Back", to: user_path(@conn, :index) %>
+
