@@ -19,8 +19,8 @@
     <%= error_tag f, :username %>
   </div>
   <div class="form-group">
-    <%= password_input f, :passowrd, placeholder: "Password", class: "form-control" %>
-    <%= error_tag f, :passowrd %>
+    <%= password_input f, :password, placeholder: "Password", class: "form-control" %>
+    <%= error_tag f, :password %>
   </div>
   <%= submit "Create User", class: "btn btn-primary" %>
 <% end %>
