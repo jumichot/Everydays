@@ -23,6 +23,12 @@ erpca = endpoint -> routes -> pipeline -> controller -> action
 PLUG = init and call. init compile time, call runtime. Slow things in init
 pass a connection structure Plug.Conn https://hexdocs.pm/plug/Plug.Conn.html
 
+CLI :
+mix phoenix.gen.html Video videos user_id:references:users url:string title:string description:text
+mix phoenix.gen.model Category categories name:string
+
+mix ecto.gen.migration add_category_id_to_video
+mix ecto.migrate
 
 
 
