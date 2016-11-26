@@ -1,4 +1,7 @@
 defmodule Cards.Mixfile do
+  @module.doc """
+    Provides methods for creating and handling deck of cards
+  """
   use Mix.Project
 
   def project do
@@ -27,6 +30,6 @@ defmodule Cards.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:ex_doc, "~> 0.12"}]
   end
 end
