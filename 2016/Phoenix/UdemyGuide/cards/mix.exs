@@ -1,7 +1,4 @@
 defmodule Cards.Mixfile do
-  @module.doc """
-    Provides methods for creating and handling deck of cards
-  """
   use Mix.Project
 
   def project do
