@@ -5,7 +5,9 @@ defmodule Identicon do
   end
 
   def hash_string(input) do
-    :crypto.hash(:md5, input)
+    hex = :crypto.hash(:md5, input)
     |> :erlang.binary_to_list
+
+    %Identicon.Image{hex: hex}
   end
 end
