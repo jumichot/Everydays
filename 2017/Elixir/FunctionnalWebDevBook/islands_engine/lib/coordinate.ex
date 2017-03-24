@@ -21,6 +21,10 @@ defmodule IslandsEngine.Coordinate do
     end
   end
 
+  def guess(coordinate) do
+    Agent.update(coordinate, fn state -> Map.put(state, :guessed?, true) end)
+  end
+
   def hit?(coordinate) do
     Coordinate.in_island?(coordinate) && Coordinate.guessed?(coordinate)
   end
