@@ -21,11 +21,19 @@ defmodule IslandsEngine.Coordinate do
     end
   end
 
+  def set_in_island(coordinate, value) when is_atom value do 
+    Agent.update(coordinate, fn state -> Map.put(state, :in_island, value) end)
+  end
+
   def guess(coordinate) do
     Agent.update(coordinate, fn state -> Map.put(state, :guessed?, true) end)
   end
 
   def hit?(coordinate) do
     Coordinate.in_island?(coordinate) && Coordinate.guessed?(coordinate)
+  end
+
+  def to_string(coordinate) do
+    "(in_island:#{island(coordinate)}, guessed:#{guessed?(coordinate)})"
   end
 end
