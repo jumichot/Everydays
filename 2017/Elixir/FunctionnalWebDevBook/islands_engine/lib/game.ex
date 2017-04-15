@@ -26,31 +26,15 @@ defmodule IslandsEngine.Game do
     GenServer.call(pid, {:add_player, name})
   end
 
-  def handle_call({:add_player, name}, _from, state) do
-    Player.set_name(state.player2, name)
-    {:reply, :ok, state}
-  end
 
   def set_island_coordinates(pid, player, island, coordinates) when is_atom player and is_atom island do
     GenServer.call(pid, {:set_island_coordinates, player, island, coordinates})
-  end
-
-  def handle_call({:set_island_coordinates, player, island, coordinates}, _from, state) do
-    Map.get(state, player) |> Player.set_island_coordinates(island, coordinates)
-    {:reply, :ok, state}
   end
 
   def guess_coordinate(pid, player, coordinate) when is_atom player and is_tuple coordinate do
     GenServer.call(pid, {:guess, player, coordinate})
   end
 
-  def handle_call({:guess, player, coordinate}, _from, state) do
-    opponent = opponent(state, player)
-    opponent_board = Player.get_board(opponent)
-    response = Player.guess_coordinate(opponent_board, coordinate)
-    |> forest_check(opponent, coordinate)
-    |> win_check(opponent, state)
-  end
 
 
   defp forest_check(:miss, _opponent, _coordinate), do: {:miss, :none}
@@ -76,6 +60,24 @@ defmodule IslandsEngine.Game do
 
   def call_demo(pid) do
     GenServer.call(pid, :demo)
+  end
+
+  def handle_call({:add_player, name}, _from, state) do
+    Player.set_name(state.player2, name)
+    {:reply, :ok, state}
+  end
+
+  def handle_call({:set_island_coordinates, player, island, coordinates}, _from, state) do
+    Map.get(state, player) |> Player.set_island_coordinates(island, coordinates)
+    {:reply, :ok, state}
+  end
+
+  def handle_call({:guess, player, coordinate}, _from, state) do
+    opponent = opponent(state, player)
+    opponent_board = Player.get_board(opponent)
+    Player.guess_coordinate(opponent_board, coordinate)
+    |> forest_check(opponent, coordinate)
+    |> win_check(opponent, state)
   end
   def handle_call(:demo, _from, state) do
     {:reply, state, state}
