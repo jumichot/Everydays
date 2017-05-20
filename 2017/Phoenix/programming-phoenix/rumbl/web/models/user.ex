@@ -1,3 +1,4 @@
+defmodule Rumbl.User do
   use Rumbl.Web, :model
 
   schema "users" do
