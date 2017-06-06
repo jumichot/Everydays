@@ -16,7 +16,8 @@ defmodule Rumbl.Video do
 
   def changeset(model, params \\ :empty) do
     model
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, [:url, :title, :description, :category_id])
+    |> validate_required([:url, :title, :description])
     |> assoc_constraint(:category)
   end
 end
