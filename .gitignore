@@ -3,4 +3,4 @@
 erl_crash.dump
 *.ez
 2017/Elixir/PragProgStudio/pragstudio-elixir-code/*
-*/node_modules/*
+node_modules/
